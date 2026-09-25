@@ -1,9 +1,26 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { STEPS, type StepId } from './steps'
+import { usePipeline } from './usePipeline'
+import { UploadPanel } from '../ui/UploadPanel'
+import { SheetTabs } from '../ui/SheetTabs'
+import { PreviewTable } from '../ui/PreviewTable'
+import { AnomalyList } from '../ui/AnomalyList'
 
 export function App() {
+  const p = usePipeline()
   const [step, setStep] = useState<StepId>('unggah')
+  const [sheetIdx, setSheetIdx] = useState(0)
+
+  // Setelah data diproses, langsung antar ke pratinjau.
+  useEffect(() => {
+    if (p.model) {
+      setSheetIdx(0)
+      setStep('pratinjau')
+    }
+  }, [p.model])
+
   const active = STEPS.find((s) => s.id === step)!
+  const adaModel = p.model !== null
 
   return (
     <div className="app">
@@ -21,19 +38,39 @@ export function App() {
       </header>
 
       <nav className="stepper" aria-label="Langkah pengerjaan">
-        {STEPS.map((s, i) => (
-          <button
-            key={s.id}
-            type="button"
-            className={`step ${s.id === step ? 'is-active' : ''}`}
-            aria-current={s.id === step ? 'step' : undefined}
-            onClick={() => setStep(s.id)}
-          >
-            <span className="step-no">{i + 1}</span>
-            <span className="step-label">{s.label}</span>
-          </button>
-        ))}
+        {STEPS.map((s, i) => {
+          const terkunci = (s.id === 'pratinjau' || s.id === 'validasi') && !adaModel
+          return (
+            <button
+              key={s.id}
+              type="button"
+              className={`step ${s.id === step ? 'is-active' : ''}`}
+              aria-current={s.id === step ? 'step' : undefined}
+              disabled={terkunci}
+              title={terkunci ? 'Proses data terlebih dahulu' : s.hint}
+              onClick={() => setStep(s.id)}
+            >
+              <span className="step-no">{i + 1}</span>
+              <span className="step-label">{s.label}</span>
+            </button>
+          )
+        })}
       </nav>
+
+      {p.model && (
+        <div className="summary">
+          <span>
+            <b>{p.model.sheets.length}</b> sheet
+          </span>
+          <span>
+            <b>{p.model.rawCount}</b> baris data
+          </span>
+          <span>
+            <b>{p.model.anomalies.length}</b> perlu dicek
+          </span>
+          <span className="summary-src">Template: {p.model.templateName}</span>
+        </div>
+      )}
 
       <main className="panel">
         <div className="panel-head">
@@ -41,7 +78,36 @@ export function App() {
           <p>{active.hint}</p>
         </div>
         <div className="panel-body">
-          <Placeholder step={active.id} />
+          {step === 'unggah' && <UploadPanel p={p} />}
+
+          {step === 'pratinjau' &&
+            (p.model ? (
+              <div className="preview-layout">
+                <SheetTabs sheets={p.model.sheets} active={sheetIdx} onSelect={setSheetIdx} />
+                {p.model.sheets[sheetIdx] && <PreviewTable sheet={p.model.sheets[sheetIdx]} />}
+              </div>
+            ) : (
+              <Kosong pesan="Belum ada data. Unggah berkas lalu klik Proses data." />
+            ))}
+
+          {step === 'validasi' &&
+            (p.model ? (
+              <AnomalyList
+                anomalies={p.model.anomalies}
+                onJump={(name) => {
+                  const i = p.model!.sheets.findIndex((s) => s.name === name)
+                  if (i >= 0) {
+                    setSheetIdx(i)
+                    setStep('pratinjau')
+                  }
+                }}
+              />
+            ) : (
+              <Kosong pesan="Daftar ini dihitung setelah data diproses." />
+            ))}
+
+          {step === 'edit' && <Kosong pesan="Edit sel akan tersedia pada tahap berikutnya." />}
+          {step === 'unduh' && <Kosong pesan="Unduh berkas akan tersedia pada tahap berikutnya." />}
         </div>
       </main>
 
@@ -52,18 +118,11 @@ export function App() {
   )
 }
 
-function Placeholder({ step }: { step: StepId }) {
-  const note: Record<StepId, string> = {
-    unggah: 'Belum ada berkas. Panel unggah akan dipasang pada fase berikutnya.',
-    pratinjau: 'Pratinjau per sheet akan tampil setelah berkas diproses.',
-    validasi: 'Daftar anomali akan dihitung dari data yang diproses.',
-    edit: 'Sel yang bisa diedit akan tersedia setelah pratinjau siap.',
-    unduh: 'Berkas Excel siap diunduh setelah data diproses.',
-  }
+function Kosong({ pesan }: { pesan: string }) {
   return (
     <div className="empty">
       <div className="empty-icon" aria-hidden="true" />
-      <p>{note[step]}</p>
+      <p>{pesan}</p>
     </div>
   )
 }
