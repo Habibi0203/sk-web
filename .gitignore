@@ -12,6 +12,10 @@ npm-debug.log*
 .env.*
 *.local
 
+# Kredensial git — JANGAN pernah masuk repositori
+.git-credentials
+.netrc
+
 # Editor / OS
 .DS_Store
 Thumbs.db
