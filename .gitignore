@@ -1,0 +1,36 @@
+# Dependensi & hasil build
+node_modules/
+dist/
+.vite/
+coverage/
+*.tsbuildinfo
+
+# Log & berkas lokal
+*.log
+npm-debug.log*
+.env
+.env.*
+*.local
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# ---------------------------------------------------------------- DATA PRIBADI
+# PENTING: repositori ini di-push ke GitHub.
+# Jangan pernah commit berkas data yang berisi nama orang, nomor STR, atau
+# data pribadi dokter. Semua berkas data diproses di browser dan tidak perlu
+# masuk ke repositori.
+*.xlsx
+*.xls
+*.xlsm
+*.csv
+*.docx
+*.doc
+*.pdf
+*.zip
+
+# Pengecualian: fixture sintetis untuk tes boleh masuk (tidak berisi data asli).
+!tests/fixtures/**
