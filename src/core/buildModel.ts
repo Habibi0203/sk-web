@@ -1,5 +1,5 @@
 import { ANGKATAN_COLOR, PROV_IDX } from './constants'
-import { endDateKey, fmtTmt, parseEndDates, type EndDateKey } from './dates'
+import { endDateKey, fmtTmt, type EndDateKey, type Tmt } from './dates'
 import {
   compareSheetKey,
   modeGroupKey,
@@ -19,8 +19,13 @@ import type {
 
 export interface BuildInput {
   rows: readonly RawRow[]
-  /** Paragraf dari berkas Rekapitulasi Periode (sumber tanggal akhir). */
-  paragraphs: readonly string[]
+  /**
+   * Peta tanggal akhir periode. Bisa berasal dari berkas .docx yang diunggah
+   * maupun dari aset bawaan — keduanya menghasilkan bentuk yang sama.
+   */
+  endDates: ReadonlyMap<EndDateKey, Tmt>
+  /** Nama sumber tanggal akhir, ditampilkan di UI. */
+  sumberPeriode: string
   skipped: readonly SkippedRow[]
   templateName: string
   /** Teks blok tanda tangan hasil pembacaan template. */
@@ -34,7 +39,7 @@ export interface BuildInput {
  * Nomor `lampiran` di sini masih global; saat berkas dipecah, nomornya dihitung ulang per berkas.
  */
 export function buildModel(input: BuildInput): BuildModel {
-  const endDates = parseEndDates(input.paragraphs)
+  const endDates = input.endDates
 
   // --- kelompokkan
   const groups = new Map<string, { key: SheetKey; rows: RawRow[] }>()
@@ -165,6 +170,7 @@ export function buildModel(input: BuildInput): BuildModel {
     skipped: [...input.skipped],
     anomalies,
     templateName: input.templateName,
+    sumberPeriode: input.sumberPeriode,
     rawCount: input.rows.length,
   }
 }

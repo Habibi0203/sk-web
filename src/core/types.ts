@@ -81,6 +81,8 @@ export interface BuildModel {
   anomalies: Anomaly[]
   /** Nama berkas template yang dipakai. */
   templateName: string
+  /** Asal tanggal akhir periode (berkas unggahan atau aset bawaan). */
+  sumberPeriode: string
   /** Jumlah baris data mentah yang terbaca. */
   rawCount: number
 }

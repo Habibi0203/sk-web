@@ -421,6 +421,80 @@ body {
   border-color: color-mix(in srgb, var(--danger) 30%, transparent);
 }
 
+.alert-warn {
+  background: var(--warn-soft);
+  color: var(--warn);
+  border-color: color-mix(in srgb, var(--warn) 30%, transparent);
+}
+
+/* Aset bawaan: template & rekapitulasi yang sudah ikut bersama aplikasi */
+.bawaan {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-wrap: wrap;
+  padding: 8px 11px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  font-size: 12.5px;
+}
+
+.bawaan.is-diganti {
+  border-style: solid;
+  border-color: var(--warn);
+  background: var(--warn-soft);
+}
+
+.dot-ok {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ok);
+  flex: none;
+}
+
+.hidden-input {
+  display: none;
+}
+
+/* Form isian pada panel pengaturan */
+.field {
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 12.5px;
+}
+
+.field > span {
+  color: var(--text-muted);
+}
+
+.field input {
+  font: inherit;
+  font-size: 12.5px;
+  padding: 6px 9px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  width: 100%;
+}
+
+.field input:focus {
+  outline: 2px solid var(--accent-line);
+  outline-offset: 1px;
+}
+
+@media (max-width: 640px) {
+  .field {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}
+
 /* -------------------------------------------------------------- ringkasan */
 .summary {
   display: flex;

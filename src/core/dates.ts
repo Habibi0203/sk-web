@@ -82,6 +82,25 @@ export function fmtTmt(t: Tmt): string {
   return day ? `${day} ${mm} ${yy}` : `${mm} ${yy}`
 }
 
+/** Satu entri tanggal akhir dalam bentuk JSON (aset bawaan maupun tersimpan). */
+export interface EntriEndDate {
+  angkatan: number
+  tahun: number
+  program: string
+  prov: string
+  /** [hari|null, bulan, tahun] */
+  isi: [number | null, number, number]
+}
+
+/** Ubah daftar entri JSON menjadi peta tanggal akhir. */
+export function endDatesDariEntri(entri: readonly EntriEndDate[]): Map<EndDateKey, Tmt> {
+  const out = new Map<EndDateKey, Tmt>()
+  for (const e of entri) {
+    out.set(endDateKey(e.angkatan, e.tahun, e.program, e.prov), [e.isi[0] ?? undefined, e.isi[1], e.isi[2]])
+  }
+  return out
+}
+
 /**
  * Ambil tanggal akhir periode dari daftar paragraf docx.
  * Struktur berjenjang: "Angkatan <Romawi> - <tahun>" -> "PIDI"/"PIDGI" -> "<PROG> - <PROV> - <tanggal>".

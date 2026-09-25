@@ -1,17 +1,41 @@
-import { useCallback, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { buildModel } from '../core/buildModel'
+import {
+  endDatesDariEntri,
+  parseEndDates,
+  type EndDateKey,
+  type EntriEndDate,
+  type Tmt,
+} from '../core/dates'
+import { muatEndDatesBawaan, muatTemplateBawaan, type EndDatesMeta } from '../core/defaults'
 import { bulanDariNamaFile } from '../core/naming'
 import { parseDocxParagraphs } from '../core/readDocx'
 import { readRawFiles, type RawFileInput } from '../core/readRaw'
 import { readTemplate, type TemplateInfo } from '../core/readTemplate'
+import { hapusAset, muatAset, simpanAset } from '../storage/assets'
 import type { BuildModel } from '../core/types'
 
 export interface RawInput {
   file: File
-  /** Bulan hasil tebakan dari nama berkas; null bila tidak dikenali. */
   tebakanBulan: number | null
-  /** Bulan yang dipakai (bisa dikoreksi user). */
   bulan: number | null
+}
+
+export type AsalAset = 'bawaan' | 'tersimpan' | 'unggahan'
+
+/** Aset yang dipakai aplikasi: template, tanggal akhir periode, dan teks tanda tangan. */
+export interface AsetState {
+  template: TemplateInfo | null
+  endDates: Map<EndDateKey, Tmt> | null
+  endDatesMeta: EndDatesMeta | null
+  /** Penimpa teks tanda tangan bila Master menggantinya. */
+  sig: string[] | null
+  asalTemplate: AsalAset
+  asalEndDates: AsalAset
+  diperbaruiTemplate: string | null
+  diperbaruiEndDates: string | null
+  memuat: boolean
+  error: string | null
 }
 
 export interface PipelineState {
@@ -19,28 +43,111 @@ export interface PipelineState {
   template: File | null
   docx: File | null
   model: BuildModel | null
-  templateInfo: TemplateInfo | null
+  aset: AsetState
   busy: boolean
   error: string | null
-  /** true bila semua berkas wajib sudah ada dan bulan tiap berkas mentah sudah pasti. */
   siapProses: boolean
   tambahRaw: (files: FileList | File[]) => void
   hapusRaw: (name: string) => void
   setBulan: (name: string, bulan: number | null) => void
-  setTemplate: (f: File | null) => void
-  setDocx: (f: File | null) => void
+  setTemplateSementara: (f: File | null) => void
+  setDocxSementara: (f: File | null) => void
+  /** Simpan berkas yang diunggah sebagai aset baru (persisten). */
+  perbaruiTemplate: (f: File) => Promise<void>
+  perbaruiPeriode: (f: File) => Promise<void>
+  perbaruiSig: (sig: string[]) => Promise<void>
+  /** Kembalikan ke aset bawaan aplikasi. */
+  pulihkan: (kunci: 'template' | 'enddates' | 'sig') => Promise<void>
   proses: () => Promise<void>
   reset: () => void
 }
 
 export function usePipeline(): PipelineState {
   const [raw, setRaw] = useState<RawInput[]>([])
-  const [template, setTemplateFile] = useState<File | null>(null)
-  const [docx, setDocxFile] = useState<File | null>(null)
+  const [template, setTemplateSementara] = useState<File | null>(null)
+  const [docx, setDocxSementara] = useState<File | null>(null)
   const [model, setModel] = useState<BuildModel | null>(null)
-  const [templateInfo, setTemplateInfo] = useState<TemplateInfo | null>(null)
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState<string | null>(null)
+
+  const [aset, setAset] = useState<AsetState>({
+    template: null,
+    endDates: null,
+    endDatesMeta: null,
+    sig: null,
+    asalTemplate: 'bawaan',
+    asalEndDates: 'bawaan',
+    diperbaruiTemplate: null,
+    diperbaruiEndDates: null,
+    memuat: true,
+    error: null,
+  })
+
+  // Urutan pemuatan: aset tersimpan di browser -> aset bawaan aplikasi.
+  useEffect(() => {
+    let batal = false
+    ;(async () => {
+      try {
+        const [tplTersimpan, edTersimpan, sigTersimpan] = await Promise.all([
+          muatAset('template'),
+          muatAset('enddates'),
+          muatAset('sig'),
+        ])
+
+        let tpl: TemplateInfo | null = null
+        let asalTpl: AsalAset = 'bawaan'
+        let tglTpl: string | null = null
+        if (tplTersimpan) {
+          tpl = await readTemplate(tplTersimpan.nilai.nama, tplTersimpan.nilai.data)
+          asalTpl = 'tersimpan'
+          tglTpl = tplTersimpan.diperbarui
+        } else {
+          tpl = await muatTemplateBawaan()
+          asalTpl = 'bawaan'
+        }
+
+        let ed: Map<EndDateKey, Tmt> | null = null
+        let meta: EndDatesMeta | null = null
+        let asalEd: AsalAset = 'bawaan'
+        let tglEd: string | null = null
+        if (edTersimpan) {
+          ed = endDatesDariEntri(edTersimpan.nilai.entri as EntriEndDate[])
+          meta = {
+            sumber: edTersimpan.nilai.sumber,
+            dibuat: edTersimpan.nilai.dibuat,
+            catatan: edTersimpan.nilai.catatan,
+          }
+          asalEd = 'tersimpan'
+          tglEd = edTersimpan.diperbarui
+        } else {
+          const b = await muatEndDatesBawaan()
+          ed = b.map
+          meta = b.meta
+          asalEd = 'bawaan'
+        }
+
+        if (batal) return
+        setAset({
+          template: tpl,
+          endDates: ed,
+          endDatesMeta: meta,
+          sig: sigTersimpan?.nilai ?? null,
+          asalTemplate: asalTpl,
+          asalEndDates: asalEd,
+          diperbaruiTemplate: tglTpl,
+          diperbaruiEndDates: tglEd,
+          memuat: false,
+          error: null,
+        })
+      } catch (e) {
+        if (batal) return
+        setAset((s) => ({ ...s, memuat: false, error: e instanceof Error ? e.message : String(e) }))
+      }
+    })()
+    return () => {
+      batal = true
+    }
+  }, [])
 
   const tambahRaw = useCallback((files: FileList | File[]) => {
     const arr = Array.from(files)
@@ -67,14 +174,78 @@ export function usePipeline(): PipelineState {
     setModel(null)
   }, [])
 
-  const setTemplate = useCallback((f: File | null) => {
-    setTemplateFile(f)
-    setTemplateInfo(null)
+  const perbaruiTemplate = useCallback(async (f: File) => {
+    const info = await readTemplate(f.name, await f.arrayBuffer())
+    const tgl = await simpanAset('template', { nama: f.name, data: await f.arrayBuffer() })
+    setAset((s) => ({
+      ...s,
+      template: info,
+      asalTemplate: 'tersimpan',
+      diperbaruiTemplate: tgl,
+    }))
+    setTemplateSementara(null)
     setModel(null)
   }, [])
 
-  const setDocx = useCallback((f: File | null) => {
-    setDocxFile(f)
+  const perbaruiPeriode = useCallback(async (f: File) => {
+    const paras = await parseDocxParagraphs(await f.arrayBuffer())
+    const map = parseEndDates(paras)
+    const entri: EntriEndDate[] = [...map].map(([k, v]) => {
+      const [angkatan, tahun, program, prov] = k.split('|')
+      return {
+        angkatan: Number(angkatan),
+        tahun: Number(tahun),
+        program,
+        prov,
+        isi: [v[0] ?? null, v[1], v[2]],
+      }
+    })
+    const dibuat = new Date().toISOString().slice(0, 10)
+    const tgl = await simpanAset('enddates', {
+      sumber: f.name,
+      dibuat,
+      catatan: `Diperbarui dari berkas ${f.name}`,
+      entri,
+    })
+    setAset((s) => ({
+      ...s,
+      endDates: map,
+      endDatesMeta: { sumber: f.name, dibuat, catatan: `Diperbarui dari berkas ${f.name}` },
+      asalEndDates: 'tersimpan',
+      diperbaruiEndDates: tgl,
+    }))
+    setDocxSementara(null)
+    setModel(null)
+  }, [])
+
+  const perbaruiSig = useCallback(async (sig: string[]) => {
+    const tgl = await simpanAset('sig', sig)
+    setAset((s) => ({ ...s, sig, diperbaruiTemplate: tgl }))
+    setModel(null)
+  }, [])
+
+  const pulihkan = useCallback(async (kunci: 'template' | 'enddates' | 'sig') => {
+    await hapusAset(kunci)
+    if (kunci === 'template') {
+      const tpl = await muatTemplateBawaan()
+      setAset((s) => ({
+        ...s,
+        template: tpl,
+        asalTemplate: 'bawaan',
+        diperbaruiTemplate: null,
+      }))
+    } else if (kunci === 'enddates') {
+      const b = await muatEndDatesBawaan()
+      setAset((s) => ({
+        ...s,
+        endDates: b.map,
+        endDatesMeta: b.meta,
+        asalEndDates: 'bawaan',
+        diperbaruiEndDates: null,
+      }))
+    } else {
+      setAset((s) => ({ ...s, sig: null }))
+    }
     setModel(null)
   }, [])
 
@@ -82,18 +253,32 @@ export function usePipeline(): PipelineState {
     () =>
       raw.length > 0 &&
       raw.every((r) => r.bulan !== null) &&
-      template !== null &&
-      docx !== null,
-    [raw, template, docx]
+      (template !== null || aset.template !== null) &&
+      (docx !== null || aset.endDates !== null),
+    [raw, template, docx, aset.template, aset.endDates]
   )
 
   const proses = useCallback(async () => {
-    if (!template || !docx || raw.length === 0) return
+    if (raw.length === 0) return
     setBusy(true)
     setError(null)
     try {
-      const tplInfo = await readTemplate(template.name, await template.arrayBuffer())
-      setTemplateInfo(tplInfo)
+      let tpl: TemplateInfo
+      if (template) tpl = await readTemplate(template.name, await template.arrayBuffer())
+      else if (aset.template) tpl = aset.template
+      else throw new Error('Template belum tersedia.')
+
+      let endDates: Map<EndDateKey, Tmt>
+      let sumberPeriode: string
+      if (docx) {
+        endDates = parseEndDates(await parseDocxParagraphs(await docx.arrayBuffer()))
+        sumberPeriode = `${docx.name} (unggahan)`
+      } else if (aset.endDates) {
+        endDates = aset.endDates
+        sumberPeriode = `${aset.endDatesMeta?.sumber ?? 'bawaan'} (${aset.endDatesMeta?.dibuat ?? '-'})`
+      } else {
+        throw new Error('Data tanggal akhir periode belum tersedia.')
+      }
 
       const inputs: RawFileInput[] = []
       for (const r of raw) {
@@ -101,14 +286,13 @@ export function usePipeline(): PipelineState {
       }
       const { rows, skipped, bulanTidakDiketahui } = await readRawFiles(inputs)
 
-      const paragraphs = await parseDocxParagraphs(await docx.arrayBuffer())
-
       const m = buildModel({
         rows,
-        paragraphs,
+        endDates,
+        sumberPeriode,
         skipped,
-        templateName: template.name,
-        templateSig: tplInfo.sig,
+        templateName: tpl.fileName,
+        templateSig: aset.sig ?? tpl.sig,
       })
       if (bulanTidakDiketahui.length > 0) {
         setError(`Bulan tidak dikenali untuk: ${bulanTidakDiketahui.join(', ')}`)
@@ -120,14 +304,13 @@ export function usePipeline(): PipelineState {
     } finally {
       setBusy(false)
     }
-  }, [template, docx, raw])
+  }, [template, docx, raw, aset])
 
   const reset = useCallback(() => {
     setRaw([])
-    setTemplateFile(null)
-    setDocxFile(null)
+    setTemplateSementara(null)
+    setDocxSementara(null)
     setModel(null)
-    setTemplateInfo(null)
     setError(null)
   }, [])
 
@@ -136,15 +319,19 @@ export function usePipeline(): PipelineState {
     template,
     docx,
     model,
-    templateInfo,
+    aset,
     busy,
     error,
     siapProses,
     tambahRaw,
     hapusRaw,
     setBulan,
-    setTemplate,
-    setDocx,
+    setTemplateSementara,
+    setDocxSementara,
+    perbaruiTemplate,
+    perbaruiPeriode,
+    perbaruiSig,
+    pulihkan,
     proses,
     reset,
   }

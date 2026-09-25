@@ -45,3 +45,8 @@ tests/_*.local.test.ts
 
 # Pengecualian: fixture sintetis untuk tes boleh masuk (tidak berisi data asli).
 !tests/fixtures/**
+
+# Aset bawaan aplikasi WAJIB ikut — berisi acuan layout, bukan data pribadi.
+# public/template-default.xlsx = 1 sheet template dengan contoh isi sudah dibuang.
+# public/enddates-default.json = hanya angkatan/program/provinsi/tanggal.
+!public/template-default.xlsx

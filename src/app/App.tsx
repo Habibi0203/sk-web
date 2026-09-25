@@ -5,6 +5,7 @@ import { UploadPanel } from '../ui/UploadPanel'
 import { SheetTabs } from '../ui/SheetTabs'
 import { PreviewTable } from '../ui/PreviewTable'
 import { AnomalyList } from '../ui/AnomalyList'
+import { PengaturanPanel } from '../ui/PengaturanPanel'
 
 export function App() {
   const p = usePipeline()
@@ -69,6 +70,7 @@ export function App() {
             <b>{p.model.anomalies.length}</b> perlu dicek
           </span>
           <span className="summary-src">Template: {p.model.templateName}</span>
+          <span className="summary-src">Periode: {p.model.sumberPeriode}</span>
         </div>
       )}
 
@@ -78,7 +80,9 @@ export function App() {
           <p>{active.hint}</p>
         </div>
         <div className="panel-body">
-          {step === 'unggah' && <UploadPanel p={p} />}
+          {step === 'unggah' && (
+            <UploadPanel p={p} kePengaturan={() => setStep('pengaturan')} />
+          )}
 
           {step === 'pratinjau' &&
             (p.model ? (
@@ -108,6 +112,7 @@ export function App() {
 
           {step === 'edit' && <Kosong pesan="Edit sel akan tersedia pada tahap berikutnya." />}
           {step === 'unduh' && <Kosong pesan="Unduh berkas akan tersedia pada tahap berikutnya." />}
+          {step === 'pengaturan' && <PengaturanPanel p={p} />}
         </div>
       </main>
 

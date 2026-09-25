@@ -4,18 +4,40 @@ import type { PipelineState } from '../app/usePipeline'
 
 interface Props {
   p: PipelineState
+  kePengaturan: () => void
 }
 
-export function UploadPanel({ p }: Props) {
+export function UploadPanel({ p, kePengaturan }: Props) {
+  const ref = useRef<HTMLInputElement>(null)
+
   return (
     <div className="upload">
       <section className="up-block">
         <header>
-          <h3>1. Berkas data mentah</h3>
-          <p>Boleh berapa saja. Bulan ditebak dari nama berkas — bisa dikoreksi bila salah.</p>
+          <h3>Berkas data mentah</h3>
+          <p>
+            Boleh berapa saja. Bulan ditebak dari nama berkas — bisa dikoreksi bila salah.
+            Template dan rekapitulasi periode tidak perlu diunggah (sudah tersedia bawaan).
+          </p>
         </header>
 
-        <RawPicker onPick={p.tambahRaw} />
+        <div className="drop">
+          <input
+            ref={ref}
+            type="file"
+            accept=".xlsx,.xlsm"
+            multiple
+            className="hidden-input"
+            onChange={(e) => {
+              if (e.target.files?.length) p.tambahRaw(e.target.files)
+              e.target.value = ''
+            }}
+          />
+          <button type="button" className="btn-ghost" onClick={() => ref.current?.click()}>
+            Pilih berkas mentah
+          </button>
+          <span className="hint">Bisa pilih beberapa berkas sekaligus</span>
+        </div>
 
         {p.raw.length > 0 && (
           <ul className="filelist">
@@ -52,30 +74,46 @@ export function UploadPanel({ p }: Props) {
         )}
       </section>
 
-      <div className="up-row">
-        <section className="up-block">
-          <header>
-            <h3>2. Berkas template</h3>
-            <p>Acuan layout: lebar kolom, header, dan blok tanda tangan.</p>
-          </header>
-          <SinglePicker
-            accept=".xlsx"
-            value={p.template?.name ?? null}
-            onPick={(f) => p.setTemplate(f)}
-          />
-        </section>
-
-        <section className="up-block">
-          <header>
-            <h3>3. Rekapitulasi periode</h3>
-            <p>Sumber tanggal akhir periode (berkas .docx).</p>
-          </header>
-          <SinglePicker accept=".docx" value={p.docx?.name ?? null} onPick={(f) => p.setDocx(f)} />
-        </section>
-      </div>
+      <section className="up-block">
+        <header>
+          <h3>Aset yang dipakai</h3>
+          <p>Template dan rekapitulasi periode sudah tersedia. Ganti bila memang perlu.</p>
+        </header>
+        <div className="bawaan">
+          <span className="dot-ok" />
+          <span>
+            Template: {p.aset.template ? p.aset.template.fileName : 'belum dimuat'}
+            {p.aset.asalTemplate === 'tersimpan' ? ' (diperbarui)' : ' (bawaan)'}
+          </span>
+          <button type="button" className="btn-x" onClick={kePengaturan}>
+            Kelola
+          </button>
+        </div>
+        <div className="bawaan">
+          <span className="dot-ok" />
+          <span>
+            Periode: {p.aset.endDatesMeta?.sumber ?? 'belum dimuat'} (
+            {p.aset.endDatesMeta?.dibuat ?? '-'}) — {p.aset.endDates?.size ?? 0} entri
+            {p.aset.asalEndDates === 'tersimpan' ? ' (diperbarui)' : ' (bawaan)'}
+          </span>
+          <button type="button" className="btn-x" onClick={kePengaturan}>
+            Kelola
+          </button>
+        </div>
+        {p.aset.error && (
+          <div className="alert alert-warn">
+            Aset gagal dimuat: {p.aset.error}. Buka menu Pengaturan untuk mengunggah berkasnya.
+          </div>
+        )}
+      </section>
 
       <div className="up-actions">
-        <button type="button" className="btn-primary" disabled={!p.siapProses || p.busy} onClick={p.proses}>
+        <button
+          type="button"
+          className="btn-primary"
+          disabled={!p.siapProses || p.busy}
+          onClick={p.proses}
+        >
           {p.busy ? 'Memproses…' : 'Proses data'}
         </button>
         {(p.raw.length > 0 || p.template || p.docx) && (
@@ -85,63 +123,12 @@ export function UploadPanel({ p }: Props) {
         )}
         {!p.siapProses && (
           <span className="hint">
-            Lengkapi berkas mentah, template, dan rekapitulasi. Pastikan bulan tiap berkas mentah sudah dipilih.
+            Unggah berkas data mentah dan pastikan bulan tiap berkas sudah dipilih.
           </span>
         )}
       </div>
 
       {p.error && <div className="alert alert-danger">{p.error}</div>}
-    </div>
-  )
-}
-
-function RawPicker({ onPick }: { onPick: (f: FileList) => void }) {
-  const ref = useRef<HTMLInputElement>(null)
-  return (
-    <div className="drop">
-      <input
-        ref={ref}
-        type="file"
-        accept=".xlsx,.xlsm"
-        multiple
-        onChange={(e) => {
-          if (e.target.files?.length) onPick(e.target.files)
-          e.target.value = ''
-        }}
-      />
-      <button type="button" className="btn-ghost" onClick={() => ref.current?.click()}>
-        Pilih berkas mentah
-      </button>
-      <span className="hint">Bisa pilih beberapa berkas sekaligus</span>
-    </div>
-  )
-}
-
-function SinglePicker({
-  accept,
-  value,
-  onPick,
-}: {
-  accept: string
-  value: string | null
-  onPick: (f: File | null) => void
-}) {
-  const ref = useRef<HTMLInputElement>(null)
-  return (
-    <div className="drop">
-      <input
-        ref={ref}
-        type="file"
-        accept={accept}
-        onChange={(e) => {
-          onPick(e.target.files?.[0] ?? null)
-          e.target.value = ''
-        }}
-      />
-      <button type="button" className="btn-ghost" onClick={() => ref.current?.click()}>
-        {value ? 'Ganti berkas' : 'Pilih berkas'}
-      </button>
-      {value ? <span className="file-name" title={value}>{value}</span> : <span className="hint">Belum ada berkas</span>}
     </div>
   )
 }

@@ -3,6 +3,7 @@ import ExcelJS from 'exceljs'
 import JSZip from 'jszip'
 import { readRawFiles, findHeaderRow, cellText } from '../src/core/readRaw'
 import { parseDocxParagraphs } from '../src/core/readDocx'
+import { parseEndDates } from '../src/core/dates'
 import { buildModel, splitSheets } from '../src/core/buildModel'
 
 // Semua data di berkas ini SINTETIS. Jangan pernah menyalin nama orang atau
@@ -205,7 +206,8 @@ describe('buildModel + splitSheets', () => {
     const { rows, skipped } = await readRawFiles([{ name: 'MARET_DATA.xlsx', data }])
     return buildModel({
       rows,
-      paragraphs,
+      endDates: parseEndDates(paragraphs),
+      sumberPeriode: 'uji',
       skipped,
       templateName: 'Template.xlsx',
       templateSig: ['KUASA PENGGUNA ANGGARAN', 'KANTOR PUSAT ...', 'dr. Contoh Penandatangan'],
@@ -238,7 +240,8 @@ describe('buildModel + splitSheets', () => {
     const { rows, skipped } = await readRawFiles([{ name: 'MEI_DATA.xlsx', data }])
     const m2 = buildModel({
       rows,
-      paragraphs,
+      endDates: parseEndDates(paragraphs),
+      sumberPeriode: 'uji',
       skipped,
       templateName: 'T.xlsx',
       templateSig: [],
@@ -249,14 +252,21 @@ describe('buildModel + splitSheets', () => {
   it('melaporkan nama pengganti yang kosong', async () => {
     const data = await makeRawXlsx({ MARET: [{ ...ROW_A, menjadi: '' }] })
     const { rows, skipped } = await readRawFiles([{ name: 'MARET_DATA.xlsx', data }])
-    const m = buildModel({ rows, paragraphs, skipped, templateName: 'T.xlsx', templateSig: [] })
+    const m = buildModel({ rows, endDates: parseEndDates(paragraphs), sumberPeriode: 'uji', skipped, templateName: 'T.xlsx', templateSig: [] })
     expect(m.anomalies.some((a) => a.kind === 'NAMA PENGGANTI kosong')).toBe(true)
   })
 
   it('memakai "??" bila tanggal akhir tidak ditemukan', async () => {
     const data = await makeRawXlsx({ MARET: [{ ...ROW_A }] })
     const { rows, skipped } = await readRawFiles([{ name: 'MARET_DATA.xlsx', data }])
-    const m = buildModel({ rows, paragraphs: [], skipped, templateName: 'T.xlsx', templateSig: [] })
+    const m = buildModel({
+      rows,
+      endDates: new Map(),
+      sumberPeriode: 'uji',
+      skipped,
+      templateName: 'T.xlsx',
+      templateSig: [],
+    })
     expect(m.sheets[0].rows[0].periodesasi).toBe('1 Mar 26 - ??')
     expect(m.anomalies.some((a) => a.kind === 'Tanggal akhir tidak ditemukan')).toBe(true)
   })
@@ -270,7 +280,7 @@ describe('buildModel + splitSheets', () => {
       ],
     })
     const { rows, skipped } = await readRawFiles([{ name: 'MARET_DATA.xlsx', data }])
-    const m = buildModel({ rows, paragraphs, skipped, templateName: 'T.xlsx', templateSig: [] })
+    const m = buildModel({ rows, endDates: parseEndDates(paragraphs), sumberPeriode: 'uji', skipped, templateName: 'T.xlsx', templateSig: [] })
     expect(m.sheets.map((s) => s.name)).toEqual([
       'I_2025_Aceh_Mar',
       'I_2026_Sumut_Mar',
@@ -291,7 +301,7 @@ describe('buildModel + splitSheets', () => {
       { name: 'MARET_DATA.xlsx', data: dataMar },
       { name: 'APRIL_DATA.xlsx', data: dataApr },
     ])
-    const m = buildModel({ rows, paragraphs, skipped, templateName: 'T.xlsx', templateSig: [] })
+    const m = buildModel({ rows, endDates: parseEndDates(paragraphs), sumberPeriode: 'uji', skipped, templateName: 'T.xlsx', templateSig: [] })
 
     const perBulan = splitSheets(m.sheets, 'bulan')
     expect(perBulan.map((g) => g.label)).toEqual(['Maret', 'April'])

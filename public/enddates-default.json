@@ -1,0 +1,4506 @@
+{
+  "sumber": "Rekapitulasi Periode PIDI & PIDGI.docx",
+  "dibuat": "2026-09-25",
+  "catatan": "Tanggal akhir periode bawaan. Ganti lewat menu unggah bila berkas rekapitulasi periode diperbarui (biasanya tiap 3-4 bulan). Tidak memuat nama orang.",
+  "entri": [
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "ACEH",
+      "isi": [
+        19,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "BALI",
+      "isi": [
+        12,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "BANTEN",
+      "isi": [
+        12,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "DI YOGYAKARTA",
+      "isi": [
+        15,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "DKI JAKARTA",
+      "isi": [
+        12,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "JAMBI",
+      "isi": [
+        19,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "JAWA BARAT",
+      "isi": [
+        22,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "JAWA TENGAH",
+      "isi": [
+        15,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "JAWA TIMUR",
+      "isi": [
+        19,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "KALIMANTAN BARAT",
+      "isi": [
+        15,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "KALIMANTAN SELATAN",
+      "isi": [
+        12,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "KALIMANTAN TENGAH",
+      "isi": [
+        22,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "KALIMANTAN TIMUR",
+      "isi": [
+        8,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "LAMPUNG",
+      "isi": [
+        8,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "MALUKU",
+      "isi": [
+        22,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "NUSA TENGGARA BARAT",
+      "isi": [
+        12,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "RIAU",
+      "isi": [
+        8,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "SULAWESI BARAT",
+      "isi": [
+        25,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "SULAWESI SELATAN",
+      "isi": [
+        22,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "SULAWESI TENGGARA",
+      "isi": [
+        25,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "SULAWESI UTARA",
+      "isi": [
+        8,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "SUMATERA BARAT",
+      "isi": [
+        15,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "SUMATERA SELATAN",
+      "isi": [
+        12,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "SUMATERA UTARA",
+      "isi": [
+        19,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "ACEH",
+      "isi": [
+        19,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "BALI",
+      "isi": [
+        12,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "BANTEN",
+      "isi": [
+        12,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "BENGKULU",
+      "isi": [
+        19,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "DI YOGYAKARTA",
+      "isi": [
+        15,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "DKI JAKARTA",
+      "isi": [
+        12,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "GORONTALO",
+      "isi": [
+        15,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "JAMBI",
+      "isi": [
+        19,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "JAWA BARAT",
+      "isi": [
+        22,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "JAWA TENGAH",
+      "isi": [
+        15,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "JAWA TIMUR",
+      "isi": [
+        19,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "KALIMANTAN BARAT",
+      "isi": [
+        15,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "KALIMANTAN SELATAN",
+      "isi": [
+        12,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "KALIMANTAN TENGAH",
+      "isi": [
+        22,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "KALIMANTAN TIMUR",
+      "isi": [
+        8,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "KALIMANTAN UTARA",
+      "isi": [
+        25,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "KEPULAUAN BANGKA BELITUNG",
+      "isi": [
+        19,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "KEPULAUAN RIAU",
+      "isi": [
+        8,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "LAMPUNG",
+      "isi": [
+        8,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "MALUKU",
+      "isi": [
+        22,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "MALUKU UTARA",
+      "isi": [
+        25,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "NUSA TENGGARA BARAT",
+      "isi": [
+        12,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "NUSA TENGGARA TIMUR",
+      "isi": [
+        25,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "PAPUA",
+      "isi": [
+        25,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "PAPUA BARAT DAYA",
+      "isi": [
+        22,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "RIAU",
+      "isi": [
+        8,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "SULAWESI BARAT",
+      "isi": [
+        25,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "SULAWESI SELATAN",
+      "isi": [
+        22,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "SULAWESI TENGAH",
+      "isi": [
+        8,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "SULAWESI TENGGARA",
+      "isi": [
+        25,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "SULAWESI UTARA",
+      "isi": [
+        8,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "SUMATERA BARAT",
+      "isi": [
+        15,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "SUMATERA SELATAN",
+      "isi": [
+        12,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "SUMATERA UTARA",
+      "isi": [
+        19,
+        2,
+        2026
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "ACEH",
+      "isi": [
+        8,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "BALI",
+      "isi": [
+        10,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "BANTEN",
+      "isi": [
+        10,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "BENGKULU",
+      "isi": [
+        22,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "DI YOGYAKARTA",
+      "isi": [
+        17,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "DKI JAKARTA",
+      "isi": [
+        10,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "JAMBI",
+      "isi": [
+        22,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "JAWA BARAT",
+      "isi": [
+        24,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "JAWA TENGAH",
+      "isi": [
+        17,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "JAWA TIMUR",
+      "isi": [
+        22,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "KALIMANTAN BARAT",
+      "isi": [
+        17,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "KALIMANTAN SELATAN",
+      "isi": [
+        10,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "KALIMANTAN TENGAH",
+      "isi": [
+        22,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "KALIMANTAN TIMUR",
+      "isi": [
+        8,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "KALIMANTAN UTARA",
+      "isi": [
+        24,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "LAMPUNG",
+      "isi": [
+        8,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "MALUKU",
+      "isi": [
+        24,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "NUSA TENGGARA BARAT",
+      "isi": [
+        10,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "RIAU",
+      "isi": [
+        8,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "SULAWESI BARAT",
+      "isi": [
+        26,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "SULAWESI SELATAN",
+      "isi": [
+        26,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "SULAWESI TENGGARA",
+      "isi": [
+        26,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "SULAWESI UTARA",
+      "isi": [
+        17,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "SUMATERA BARAT",
+      "isi": [
+        17,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "SUMATERA SELATAN",
+      "isi": [
+        10,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "SUMATERA UTARA",
+      "isi": [
+        22,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "ACEH",
+      "isi": [
+        8,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "BALI",
+      "isi": [
+        10,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "BANTEN",
+      "isi": [
+        10,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "BENGKULU",
+      "isi": [
+        22,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "DI YOGYAKARTA",
+      "isi": [
+        17,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "DKI JAKARTA",
+      "isi": [
+        10,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "GORONTALO",
+      "isi": [
+        17,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "JAMBI",
+      "isi": [
+        22,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "JAWA BARAT",
+      "isi": [
+        24,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "JAWA TENGAH",
+      "isi": [
+        17,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "JAWA TIMUR",
+      "isi": [
+        22,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "KALIMANTAN BARAT",
+      "isi": [
+        17,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "KALIMANTAN SELATAN",
+      "isi": [
+        10,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "KALIMANTAN TENGAH",
+      "isi": [
+        22,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "KALIMANTAN TIMUR",
+      "isi": [
+        8,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "KALIMANTAN UTARA",
+      "isi": [
+        24,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "KEPULAUAN BANGKA BELITUNG",
+      "isi": [
+        22,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "KEPULAUAN RIAU",
+      "isi": [
+        8,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "LAMPUNG",
+      "isi": [
+        8,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "MALUKU",
+      "isi": [
+        24,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "MALUKU UTARA",
+      "isi": [
+        24,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "NUSA TENGGARA BARAT",
+      "isi": [
+        10,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "NUSA TENGGARA TIMUR",
+      "isi": [
+        26,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "PAPUA",
+      "isi": [
+        24,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "PAPUA BARAT",
+      "isi": [
+        24,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "PAPUA SELATAN",
+      "isi": [
+        26,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "RIAU",
+      "isi": [
+        8,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "SULAWESI BARAT",
+      "isi": [
+        26,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "SULAWESI SELATAN",
+      "isi": [
+        26,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "SULAWESI TENGAH",
+      "isi": [
+        8,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "SULAWESI TENGGARA",
+      "isi": [
+        26,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "SULAWESI UTARA",
+      "isi": [
+        17,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "SUMATERA BARAT",
+      "isi": [
+        17,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "SUMATERA SELATAN",
+      "isi": [
+        10,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 1,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "SUMATERA UTARA",
+      "isi": [
+        22,
+        2,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "ACEH",
+      "isi": [
+        20,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "BALI",
+      "isi": [
+        20,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "BANTEN",
+      "isi": [
+        13,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "DI YOGYAKARTA",
+      "isi": [
+        13,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "DKI JAKARTA",
+      "isi": [
+        18,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "JAWA BARAT",
+      "isi": [
+        22,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "JAWA TENGAH",
+      "isi": [
+        25,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "JAWA TIMUR",
+      "isi": [
+        18,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "KALIMANTAN BARAT",
+      "isi": [
+        7,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "KALIMANTAN SELATAN",
+      "isi": [
+        18,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "KALIMANTAN TIMUR",
+      "isi": [
+        22,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "KEPULAUAN BANGKA BELITUNG",
+      "isi": [
+        25,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "KEPULAUAN RIAU",
+      "isi": [
+        7,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "LAMPUNG",
+      "isi": [
+        7,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "MALUKU",
+      "isi": [
+        20,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "NUSA TENGGARA BARAT",
+      "isi": [
+        20,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "PAPUA",
+      "isi": [
+        22,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "SULAWESI BARAT",
+      "isi": [
+        25,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "SULAWESI SELATAN",
+      "isi": [
+        18,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "SULAWESI TENGGARA",
+      "isi": [
+        25,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "SUMATERA BARAT",
+      "isi": [
+        13,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "SUMATERA SELATAN",
+      "isi": [
+        13,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "SUMATERA UTARA",
+      "isi": [
+        20,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "ACEH",
+      "isi": [
+        20,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "BALI",
+      "isi": [
+        20,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "BANTEN",
+      "isi": [
+        13,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "BENGKULU",
+      "isi": [
+        18,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "DI YOGYAKARTA",
+      "isi": [
+        13,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "DKI JAKARTA",
+      "isi": [
+        18,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "JAMBI",
+      "isi": [
+        13,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "JAWA BARAT",
+      "isi": [
+        22,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "JAWA TENGAH",
+      "isi": [
+        25,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "JAWA TIMUR",
+      "isi": [
+        18,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "KALIMANTAN BARAT",
+      "isi": [
+        7,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "KALIMANTAN SELATAN",
+      "isi": [
+        18,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "KALIMANTAN TENGAH",
+      "isi": [
+        7,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "KALIMANTAN TIMUR",
+      "isi": [
+        22,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "KALIMANTAN UTARA",
+      "isi": [
+        13,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "KEPULAUAN BANGKA BELITUNG",
+      "isi": [
+        25,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "KEPULAUAN RIAU",
+      "isi": [
+        7,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "LAMPUNG",
+      "isi": [
+        7,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "MALUKU",
+      "isi": [
+        20,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "MALUKU UTARA",
+      "isi": [
+        22,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "NUSA TENGGARA BARAT",
+      "isi": [
+        20,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "NUSA TENGGARA TIMUR",
+      "isi": [
+        18,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "PAPUA BARAT DAYA",
+      "isi": [
+        22,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "PAPUA TENGAH",
+      "isi": [
+        25,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "RIAU",
+      "isi": [
+        7,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "SULAWESI BARAT",
+      "isi": [
+        25,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "SULAWESI SELATAN",
+      "isi": [
+        18,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "SULAWESI TENGAH",
+      "isi": [
+        7,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "SULAWESI TENGGARA",
+      "isi": [
+        25,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "SULAWESI UTARA",
+      "isi": [
+        25,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "SUMATERA BARAT",
+      "isi": [
+        13,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "SUMATERA SELATAN",
+      "isi": [
+        13,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "SUMATERA UTARA",
+      "isi": [
+        20,
+        5,
+        2026
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "BALI",
+      "isi": [
+        21,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "BANTEN",
+      "isi": [
+        10,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "DI YOGYAKARTA",
+      "isi": [
+        10,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "DKI JAKARTA",
+      "isi": [
+        16,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "JAMBI",
+      "isi": [
+        10,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "JAWA BARAT",
+      "isi": [
+        24,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "JAWA TENGAH",
+      "isi": [
+        28,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "JAWA TIMUR",
+      "isi": [
+        16,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "KALIMANTAN BARAT",
+      "isi": [
+        8,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "KALIMANTAN SELATAN",
+      "isi": [
+        16,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "KALIMANTAN TIMUR",
+      "isi": [
+        24,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "KEPULAUAN RIAU",
+      "isi": [
+        8,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "LAMPUNG",
+      "isi": [
+        8,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "MALUKU",
+      "isi": [
+        21,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "MALUKU UTARA",
+      "isi": [
+        24,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "NUSA TENGGARA BARAT",
+      "isi": [
+        21,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "PAPUA",
+      "isi": [
+        28,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "SULAWESI BARAT",
+      "isi": [
+        28,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "SULAWESI SELATAN",
+      "isi": [
+        16,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "SULAWESI TENGGARA",
+      "isi": [
+        28,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "SUMATERA BARAT",
+      "isi": [
+        10,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "SUMATERA SELATAN",
+      "isi": [
+        10,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "SUMATERA UTARA",
+      "isi": [
+        21,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "ACEH",
+      "isi": [
+        21,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "BALI",
+      "isi": [
+        21,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "BANTEN",
+      "isi": [
+        10,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "BENGKULU",
+      "isi": [
+        16,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "DI YOGYAKARTA",
+      "isi": [
+        10,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "DKI JAKARTA",
+      "isi": [
+        16,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "JAMBI",
+      "isi": [
+        10,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "JAWA BARAT",
+      "isi": [
+        24,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "JAWA TENGAH",
+      "isi": [
+        28,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "JAWA TIMUR",
+      "isi": [
+        16,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "KALIMANTAN BARAT",
+      "isi": [
+        8,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "KALIMANTAN SELATAN",
+      "isi": [
+        16,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "KALIMANTAN TENGAH",
+      "isi": [
+        8,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "KALIMANTAN TIMUR",
+      "isi": [
+        24,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "KALIMANTAN UTARA",
+      "isi": [
+        10,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "KEPULAUAN BANGKA BELITUNG",
+      "isi": [
+        24,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "KEPULAUAN RIAU",
+      "isi": [
+        8,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "LAMPUNG",
+      "isi": [
+        8,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "MALUKU",
+      "isi": [
+        21,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "MALUKU UTARA",
+      "isi": [
+        24,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "NUSA TENGGARA BARAT",
+      "isi": [
+        21,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "NUSA TENGGARA TIMUR",
+      "isi": [
+        16,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "PAPUA BARAT DAYA",
+      "isi": [
+        24,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "PAPUA TENGAH",
+      "isi": [
+        24,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "RIAU",
+      "isi": [
+        8,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "SULAWESI BARAT",
+      "isi": [
+        28,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "SULAWESI SELATAN",
+      "isi": [
+        16,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "SULAWESI TENGAH",
+      "isi": [
+        8,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "SULAWESI TENGGARA",
+      "isi": [
+        28,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "SULAWESI UTARA",
+      "isi": [
+        28,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "SUMATERA BARAT",
+      "isi": [
+        10,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "SUMATERA SELATAN",
+      "isi": [
+        10,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 2,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "SUMATERA UTARA",
+      "isi": [
+        21,
+        6,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "ACEH",
+      "isi": [
+        17,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "BALI",
+      "isi": [
+        24,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "BANTEN",
+      "isi": [
+        24,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "BENGKULU",
+      "isi": [
+        13,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "DI YOGYAKARTA",
+      "isi": [
+        20,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "DKI JAKARTA",
+      "isi": [
+        24,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "JAMBI",
+      "isi": [
+        10,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "JAWA BARAT",
+      "isi": [
+        17,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "JAWA TENGAH",
+      "isi": [
+        27,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "JAWA TIMUR",
+      "isi": [
+        20,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "KALIMANTAN BARAT",
+      "isi": [
+        20,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "KALIMANTAN SELATAN",
+      "isi": [
+        13,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "KALIMANTAN TENGAH",
+      "isi": [
+        10,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "KALIMANTAN TIMUR",
+      "isi": [
+        17,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "KEPULAUAN BANGKA BELITUNG",
+      "isi": [
+        17,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "LAMPUNG",
+      "isi": [
+        13,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "MALUKU",
+      "isi": [
+        24,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "NUSA TENGGARA BARAT",
+      "isi": [
+        20,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "RIAU",
+      "isi": [
+        13,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "SULAWESI BARAT",
+      "isi": [
+        27,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "SULAWESI SELATAN",
+      "isi": [
+        27,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "SULAWESI TENGGARA",
+      "isi": [
+        27,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "SULAWESI UTARA",
+      "isi": [
+        10,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "SUMATERA BARAT",
+      "isi": [
+        17,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "SUMATERA SELATAN",
+      "isi": [
+        20,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "SUMATERA UTARA",
+      "isi": [
+        17,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "ACEH",
+      "isi": [
+        17,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "BALI",
+      "isi": [
+        24,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "BANTEN",
+      "isi": [
+        24,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "BENGKULU",
+      "isi": [
+        13,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "DI YOGYAKARTA",
+      "isi": [
+        20,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "DKI JAKARTA",
+      "isi": [
+        24,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "GORONTALO",
+      "isi": [
+        10,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "JAMBI",
+      "isi": [
+        10,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "JAWA BARAT",
+      "isi": [
+        17,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "JAWA TENGAH",
+      "isi": [
+        27,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "JAWA TIMUR",
+      "isi": [
+        20,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "KALIMANTAN BARAT",
+      "isi": [
+        20,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "KALIMANTAN SELATAN",
+      "isi": [
+        13,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "KALIMANTAN TENGAH",
+      "isi": [
+        10,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "KALIMANTAN TIMUR",
+      "isi": [
+        17,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "KALIMANTAN UTARA",
+      "isi": [
+        10,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "KEPULAUAN BANGKA BELITUNG",
+      "isi": [
+        17,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "KEPULAUAN RIAU",
+      "isi": [
+        13,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "LAMPUNG",
+      "isi": [
+        13,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "MALUKU",
+      "isi": [
+        24,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "MALUKU UTARA",
+      "isi": [
+        20,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "NUSA TENGGARA BARAT",
+      "isi": [
+        20,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "NUSA TENGGARA TIMUR",
+      "isi": [
+        13,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "PAPUA",
+      "isi": [
+        27,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "PAPUA BARAT",
+      "isi": [
+        24,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "PAPUA BARAT DAYA",
+      "isi": [
+        27,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "PAPUA PEGUNUNGAN",
+      "isi": [
+        24,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "RIAU",
+      "isi": [
+        13,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "SULAWESI BARAT",
+      "isi": [
+        27,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "SULAWESI SELATAN",
+      "isi": [
+        27,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "SULAWESI TENGAH",
+      "isi": [
+        10,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "SULAWESI TENGGARA",
+      "isi": [
+        27,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "SULAWESI UTARA",
+      "isi": [
+        10,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "SUMATERA BARAT",
+      "isi": [
+        17,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "SUMATERA SELATAN",
+      "isi": [
+        20,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "SUMATERA UTARA",
+      "isi": [
+        17,
+        8,
+        2026
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "ACEH",
+      "isi": [
+        20,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "BALI",
+      "isi": [
+        23,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "BANTEN",
+      "isi": [
+        27,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "DI YOGYAKARTA",
+      "isi": [
+        23,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "DKI JAKARTA",
+      "isi": [
+        15,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "JAWA BARAT",
+      "isi": [
+        30,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "JAWA TENGAH",
+      "isi": [
+        20,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "JAWA TIMUR",
+      "isi": [
+        27,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "KALIMANTAN BARAT",
+      "isi": [
+        23,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "KALIMANTAN SELATAN",
+      "isi": [
+        16,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "KALIMANTAN TENGAH",
+      "isi": [
+        30,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "KALIMANTAN TIMUR",
+      "isi": [
+        30,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "KEPULAUAN BANGKA BELITUNG",
+      "isi": [
+        15,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "LAMPUNG",
+      "isi": [
+        27,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "MALUKU",
+      "isi": [
+        20,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "NUSA TENGGARA BARAT",
+      "isi": [
+        15,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "RIAU",
+      "isi": [
+        27,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "SULAWESI SELATAN",
+      "isi": [
+        20,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "SULAWESI TENGGARA",
+      "isi": [
+        23,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "SULAWESI UTARA",
+      "isi": [
+        13,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "SUMATERA BARAT",
+      "isi": [
+        23,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDGI",
+      "prov": "SUMATERA UTARA",
+      "isi": [
+        13,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "ACEH",
+      "isi": [
+        20,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "BALI",
+      "isi": [
+        15,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "BANTEN",
+      "isi": [
+        27,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "BENGKULU",
+      "isi": [
+        16,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "DI YOGYAKARTA",
+      "isi": [
+        15,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "DKI JAKARTA",
+      "isi": [
+        15,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "GORONTALO",
+      "isi": [
+        15,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "JAMBI",
+      "isi": [
+        13,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "JAWA BARAT",
+      "isi": [
+        30,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "JAWA TENGAH",
+      "isi": [
+        20,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "JAWA TIMUR",
+      "isi": [
+        27,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "KALIMANTAN BARAT",
+      "isi": [
+        23,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "KALIMANTAN SELATAN",
+      "isi": [
+        16,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "KALIMANTAN TENGAH",
+      "isi": [
+        30,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "KALIMANTAN TIMUR",
+      "isi": [
+        20,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "KALIMANTAN UTARA",
+      "isi": [
+        13,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "KEPULAUAN BANGKA BELITUNG",
+      "isi": [
+        15,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "KEPULAUAN RIAU",
+      "isi": [
+        16,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "LAMPUNG",
+      "isi": [
+        16,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "MALUKU",
+      "isi": [
+        27,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "MALUKU UTARA",
+      "isi": [
+        23,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "NUSA TENGGARA BARAT",
+      "isi": [
+        15,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "NUSA TENGGARA TIMUR",
+      "isi": [
+        16,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "PAPUA",
+      "isi": [
+        27,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "PAPUA BARAT",
+      "isi": [
+        27,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "PAPUA BARAT DAYA",
+      "isi": [
+        30,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "PAPUA SELATAN",
+      "isi": [
+        30,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "RIAU",
+      "isi": [
+        16,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "SULAWESI BARAT",
+      "isi": [
+        30,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "SULAWESI SELATAN",
+      "isi": [
+        30,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "SULAWESI TENGAH",
+      "isi": [
+        13,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "SULAWESI TENGGARA",
+      "isi": [
+        30,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "SULAWESI UTARA",
+      "isi": [
+        13,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "SUMATERA BARAT",
+      "isi": [
+        20,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "SUMATERA SELATAN",
+      "isi": [
+        13,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 3,
+      "tahun": 2026,
+      "program": "PIDI",
+      "prov": "SUMATERA UTARA",
+      "isi": [
+        13,
+        9,
+        2027
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "ACEH",
+      "isi": [
+        23,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "BALI",
+      "isi": [
+        23,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "BANTEN",
+      "isi": [
+        19,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "DI YOGYAKARTA",
+      "isi": [
+        16,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "DKI JAKARTA",
+      "isi": [
+        12,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "JAMBI",
+      "isi": [
+        12,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "JAWA BARAT",
+      "isi": [
+        26,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "JAWA TENGAH",
+      "isi": [
+        23,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "JAWA TIMUR",
+      "isi": [
+        16,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "KALIMANTAN BARAT",
+      "isi": [
+        9,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "KALIMANTAN SELATAN",
+      "isi": [
+        16,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "KALIMANTAN TIMUR",
+      "isi": [
+        26,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "KEPULAUAN BANGKA BELITUNG",
+      "isi": [
+        16,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "KEPULAUAN RIAU",
+      "isi": [
+        9,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "LAMPUNG",
+      "isi": [
+        10,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "MALUKU",
+      "isi": [
+        19,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "MALUKU UTARA",
+      "isi": [
+        26,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "NUSA TENGGARA BARAT",
+      "isi": [
+        19,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "PAPUA",
+      "isi": [
+        26,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "SULAWESI SELATAN",
+      "isi": [
+        12,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "SULAWESI TENGGARA",
+      "isi": [
+        19,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "SUMATERA BARAT",
+      "isi": [
+        12,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "SUMATERA SELATAN",
+      "isi": [
+        12,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDGI",
+      "prov": "SUMATERA UTARA",
+      "isi": [
+        16,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "ACEH",
+      "isi": [
+        23,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "BALI",
+      "isi": [
+        23,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "BANTEN",
+      "isi": [
+        19,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "BENGKULU",
+      "isi": [
+        10,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "DI YOGYAKARTA",
+      "isi": [
+        16,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "DKI JAKARTA",
+      "isi": [
+        12,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "GORONTALO",
+      "isi": [
+        10,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "JAMBI",
+      "isi": [
+        12,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "JAWA BARAT",
+      "isi": [
+        26,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "JAWA TENGAH",
+      "isi": [
+        23,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "JAWA TIMUR",
+      "isi": [
+        16,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "KALIMANTAN BARAT",
+      "isi": [
+        9,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "KALIMANTAN SELATAN",
+      "isi": [
+        16,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "KALIMANTAN TENGAH",
+      "isi": [
+        19,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "KALIMANTAN TIMUR",
+      "isi": [
+        26,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "KEPULAUAN BANGKA BELITUNG",
+      "isi": [
+        16,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "KEPULAUAN RIAU",
+      "isi": [
+        9,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "LAMPUNG",
+      "isi": [
+        10,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "MALUKU",
+      "isi": [
+        19,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "MALUKU UTARA",
+      "isi": [
+        26,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "NUSA TENGGARA BARAT",
+      "isi": [
+        19,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "NUSA TENGGARA TIMUR",
+      "isi": [
+        23,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "PAPUA",
+      "isi": [
+        26,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "PAPUA SELATAN",
+      "isi": [
+        23,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "PAPUA TENGAH",
+      "isi": [
+        26,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "RIAU",
+      "isi": [
+        12,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "SULAWESI BARAT",
+      "isi": [
+        23,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "SULAWESI SELATAN",
+      "isi": [
+        12,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "SULAWESI TENGAH",
+      "isi": [
+        10,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "SULAWESI TENGGARA",
+      "isi": [
+        19,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "SULAWESI UTARA",
+      "isi": [
+        19,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "SUMATERA BARAT",
+      "isi": [
+        12,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "SUMATERA SELATAN",
+      "isi": [
+        12,
+        11,
+        2026
+      ]
+    },
+    {
+      "angkatan": 4,
+      "tahun": 2025,
+      "program": "PIDI",
+      "prov": "SUMATERA UTARA",
+      "isi": [
+        16,
+        11,
+        2026
+      ]
+    }
+  ]
+}
