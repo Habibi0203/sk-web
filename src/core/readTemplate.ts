@@ -17,6 +17,8 @@ export interface TemplateInfo {
   rowHeights: Record<number, number>
   /** Nomor baris terakhir yang berisi isi di template. */
   rowCount: number
+  /** Isi berkas template mentah — dipakai untuk mengkloning sheet saat ekspor. */
+  data: ArrayBuffer
 }
 
 export const DEFAULT_WIDTHS = [4.78, 19.55, 33.55, 29.78, 27.78, 30.44, 29.44]
@@ -58,6 +60,7 @@ export async function readTemplate(fileName: string, data: ArrayBuffer): Promise
     pageSetup: { ...(ws.pageSetup as Partial<ExcelJS.PageSetup>) },
     rowHeights,
     rowCount: ws.rowCount,
+    data,
   }
 }
 

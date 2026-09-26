@@ -85,4 +85,9 @@ export interface BuildModel {
   sumberPeriode: string
   /** Jumlah baris data mentah yang terbaca. */
   rawCount: number
+  /**
+   * Isi berkas template mentah, dipakai saat menyusun berkas Excel.
+   * Bisa null bila pemrosesan tidak menyertakannya (mis. pratinjau saja).
+   */
+  templateData: ArrayBuffer | null
 }

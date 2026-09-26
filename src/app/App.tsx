@@ -6,6 +6,7 @@ import { SheetTabs } from '../ui/SheetTabs'
 import { PreviewTable } from '../ui/PreviewTable'
 import { AnomalyList } from '../ui/AnomalyList'
 import { PengaturanPanel } from '../ui/PengaturanPanel'
+import { ExportPanel } from '../ui/ExportPanel'
 
 export function App() {
   const p = usePipeline()
@@ -111,7 +112,17 @@ export function App() {
             ))}
 
           {step === 'edit' && <Kosong pesan="Edit sel akan tersedia pada tahap berikutnya." />}
-          {step === 'unduh' && <Kosong pesan="Unduh berkas akan tersedia pada tahap berikutnya." />}
+          {step === 'unduh' &&
+            (p.model ? (
+              <ExportPanel
+                model={p.model}
+                info={p.aset.template!}
+                templateData={p.model.templateData}
+                templateSheet={p.aset.template?.sheetName ?? ''}
+              />
+            ) : (
+              <Kosong pesan="Berkas bisa disusun setelah data diproses." />
+            ))}
           {step === 'pengaturan' && <PengaturanPanel p={p} />}
         </div>
       </main>

@@ -293,6 +293,7 @@ export function usePipeline(): PipelineState {
         skipped,
         templateName: tpl.fileName,
         templateSig: aset.sig ?? tpl.sig,
+        templateData: tpl.data,
       })
       if (bulanTidakDiketahui.length > 0) {
         setError(`Bulan tidak dikenali untuk: ${bulanTidakDiketahui.join(', ')}`)

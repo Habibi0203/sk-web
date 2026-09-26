@@ -30,6 +30,12 @@ export interface BuildInput {
   templateName: string
   /** Teks blok tanda tangan hasil pembacaan template. */
   templateSig: readonly string[]
+  /**
+   * Berkas template mentah, dipakai untuk mengkloning sheet saat ekspor.
+   * Opsional supaya pemakaian yang hanya butuh model (mis. pratinjau) tidak
+   * perlu menyertakannya.
+   */
+  templateData?: ArrayBuffer | null
 }
 
 /**
@@ -172,6 +178,7 @@ export function buildModel(input: BuildInput): BuildModel {
     templateName: input.templateName,
     sumberPeriode: input.sumberPeriode,
     rawCount: input.rows.length,
+    templateData: input.templateData ?? null,
   }
 }
 
