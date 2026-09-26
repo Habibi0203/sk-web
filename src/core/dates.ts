@@ -74,12 +74,19 @@ function monthFromName(name: string): number | null {
   return null
 }
 
-/** Format TMT untuk kolom PERIODESASI: "1 Mar 26" atau "Feb 26". */
+/**
+ * Format TMT untuk kolom PERIODESASI.
+ *
+ * Bila TMT hanya menyebut bulan dan tahun (mis. "Jan 2025" tanpa tanggal),
+ * hari dianggap **tanggal 1** sesuai bulannya -> "1 Jan 25".
+ * Aturan ini berlaku karena dokumen SK selalu memerlukan tanggal yang pasti.
+ */
 export function fmtTmt(t: Tmt): string {
   const [day, mon, yr] = t
   const mm = MONTH_ABBR[mon - 1]
   const yy = String(yr).slice(-2)
-  return day ? `${day} ${mm} ${yy}` : `${mm} ${yy}`
+  // day === undefined berarti tanggal tidak disebutkan -> pakai tanggal 1.
+  return `${day ?? 1} ${mm} ${yy}`
 }
 
 /** Satu entri tanggal akhir dalam bentuk JSON (aset bawaan maupun tersimpan). */

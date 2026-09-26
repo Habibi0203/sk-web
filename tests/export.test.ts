@@ -190,10 +190,42 @@ describe('tulisSheet', () => {
     // sisa baris contoh template sudah hilang
     expect(ws.getCell(16, 1).value).toBe(null)
 
+    // BARIS DATA HARUS PUNYA BORDER — diambil dari baris contoh template.
+    // Bug nyata: border ini sempat hilang karena gaya disalin dari baris contoh
+    // yang sudah dibersihkan lebih dulu.
+    for (const c of [1, 2, 3, 4, 5, 6, 7]) {
+      const b = ws.getCell(14, c).border
+      expect(b?.top?.style, `border atas kolom ${c}`).toBe('thin')
+      expect(b?.bottom?.style, `border bawah kolom ${c}`).toBe('thin')
+      expect(b?.left?.style, `border kiri kolom ${c}`).toBe('thin')
+      expect(b?.right?.style, `border kanan kolom ${c}`).toBe('thin')
+    }
+
     // merge yang diharapkan
     const merges = ws.model.merges ?? []
     expect(merges).toContain('E7:G7')
     expect(merges).toContain('E8:G8')
+  })
+
+  it('baris tanda tangan TIDAK berborder, dan kolom A-D-nya bersih', async () => {
+    const { templateData, info, model } = await siapkan()
+    const { default: E } = await import('exceljs')
+    const tplWb = new E.Workbook()
+    await tplWb.xlsx.load(templateData)
+    const tpl = tplWb.getWorksheet('ANGKATAN I 2025 SUMUT FEB')!
+
+    const out = new E.Workbook()
+    const ws = cloneSheet(out, tpl, 'UJI', 'FF00B050')
+    const sheet = model.sheets[0]
+    tulisSheet({ ws, sheet, tpl, widths: info.widths, rowHeights: info.rowHeights })
+
+    const last = 13 + sheet.rows.length
+    for (const r of [last + 2, last + 3, last + 9]) {
+      // kolom A-D dibersihkan
+      for (const c of [1, 2, 3, 4]) {
+        expect(ws.getCell(r, c).border?.top?.style, `A-D baris ${r} kolom ${c}`).toBeFalsy()
+      }
+    }
   })
 
   it('menempatkan tanda tangan sesuai jumlah baris dan meng-merge E:G', async () => {

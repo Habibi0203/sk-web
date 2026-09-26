@@ -11,7 +11,11 @@ Pakai:
 
 Yang dibandingkan per sheet:
     urutan sheet, nilai sel, merge, tinggi baris, lebar kolom, warna tab,
-    page setup (orientasi/ukuran/scale), dan print area.
+    border, fill, font, page setup (orientasi/ukuran/scale), dan print area.
+
+Catatan: pemeriksaan border & fill ditambahkan setelah sempat ada bug nyata
+yang lolos — border tabel data hilang di hasil web, tetapi versi awal skrip ini
+hanya membandingkan nilai sel sehingga selisihnya tidak terdeteksi.
 
 Keluar dengan kode 1 bila ada selisih, supaya bisa dipakai di pemeriksaan otomatis.
 """
@@ -30,6 +34,35 @@ def norm_tab(c):
     if not rgb:
         return None
     return str(rgb)[-6:].upper()
+
+
+def pola_border(cell):
+    """Pola border sel sebagai huruf LRTB. '....' berarti tanpa border."""
+    out = ""
+    b = cell.border
+    for sisi in ("left", "top", "right", "bottom"):
+        s = getattr(b, sisi, None)
+        out += "LRTB"[("left", "top", "right", "bottom").index(sisi)] if (
+            s is not None and getattr(s, "style", None)
+        ) else "."
+    return out
+
+
+def warna_fill(cell):
+    """Latar sel (fgColor). None bila tidak ada."""
+    f = cell.fill
+    if f is None or getattr(f, "fill_type", None) is None:
+        return None
+    fg = getattr(f, "fgColor", None)
+    rgb = getattr(fg, "rgb", None) if fg is not None else None
+    return str(rgb)[-6:].upper() if rgb else None
+
+
+def nama_font(cell):
+    f = cell.font
+    if f is None:
+        return None
+    return (f.name, f.size, bool(f.bold), bool(f.italic))
 
 
 def main():
@@ -63,7 +96,17 @@ def main():
         if hanya_py:
             print(f"  hanya di python: {hanya_py}")
 
-    total = {"nilai": 0, "merge": 0, "tinggi": 0, "lebar": 0, "tab": 0, "setup": 0}
+    total = {
+        "nilai": 0,
+        "border": 0,
+        "fill": 0,
+        "font": 0,
+        "merge": 0,
+        "tinggi": 0,
+        "lebar": 0,
+        "tab": 0,
+        "setup": 0,
+    }
     contoh = {k: [] for k in total}
 
     for nama in nm_web:
@@ -105,21 +148,40 @@ def main():
             total["merge"] += 1
             contoh["merge"].append(f"{nama}:\n       web={m_w}\n       py ={m_p}")
 
-        # --- nilai sel & tinggi baris
+        # --- nilai sel, border, latar, dan font
         baris_maks = max(ws_w.max_row, ws_p.max_row, 30)
         for r in range(1, baris_maks + 1):
             for c in range(1, a.max_col + 1):
-                v1 = ws_w.cell(r, c).value
-                v2 = ws_p.cell(r, c).value
+                cw = ws_w.cell(r, c)
+                cp = ws_p.cell(r, c)
+                v1, v2 = cw.value, cp.value
                 s1 = "" if v1 is None else str(v1)
                 s2 = "" if v2 is None else str(v2)
+                L = openpyxl.utils.get_column_letter(c)
+                lokasi = f"{nama}!{L}{r}"
+
                 if s1 != s2:
                     total["nilai"] += 1
                     if len(contoh["nilai"]) < 8:
-                        L = openpyxl.utils.get_column_letter(c)
-                        contoh["nilai"].append(
-                            f"{nama}!{L}{r}: web={s1[:30]!r} py={s2[:30]!r}"
-                        )
+                        contoh["nilai"].append(f"{lokasi}: web={s1[:30]!r} py={s2[:30]!r}")
+
+                b1, b2 = pola_border(cw), pola_border(cp)
+                if b1 != b2:
+                    total["border"] += 1
+                    if len(contoh["border"]) < 8:
+                        contoh["border"].append(f"{lokasi}: web={b1} py={b2}")
+
+                f1, f2 = warna_fill(cw), warna_fill(cp)
+                if f1 != f2:
+                    total["fill"] += 1
+                    if len(contoh["fill"]) < 8:
+                        contoh["fill"].append(f"{lokasi}: web={f1} py={f2}")
+
+                n1, n2 = nama_font(cw), nama_font(cp)
+                if n1 != n2:
+                    total["font"] += 1
+                    if len(contoh["font"]) < 8:
+                        contoh["font"].append(f"{lokasi}: web={n1} py={n2}")
 
             h1 = ws_w.row_dimensions[r].height if r in ws_w.row_dimensions else None
             h2 = ws_p.row_dimensions[r].height if r in ws_p.row_dimensions else None
@@ -133,6 +195,9 @@ def main():
     print("\n" + "=" * 68)
     label = {
         "nilai": "nilai sel",
+        "border": "border sel",
+        "fill": "latar sel",
+        "font": "font sel",
         "merge": "merge",
         "tinggi": "tinggi baris",
         "lebar": "lebar kolom",
@@ -140,11 +205,11 @@ def main():
         "setup": "page setup",
     }
     print("SELISIH TERHADAP HASIL PYTHON")
-    for k in ("nilai", "merge", "tinggi", "lebar", "tab", "setup"):
+    for k in ("nilai", "border", "fill", "font", "merge", "tinggi", "lebar", "tab", "setup"):
         tanda = "OK" if total[k] == 0 else "BEDA"
-        print(f"  {label[k]:<28} {total[k]:>4}  {tanda}")
+        print(f"  {label[k]:<28} {total[k]:>5}  {tanda}")
 
-    for k in ("nilai", "merge", "tinggi", "lebar", "tab", "setup"):
+    for k in ("nilai", "border", "fill", "font", "merge", "tinggi", "lebar", "tab", "setup"):
         if contoh[k]:
             print(f"\n  contoh {label[k]}:")
             for s in contoh[k]:

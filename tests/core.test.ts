@@ -73,10 +73,18 @@ describe('parseTmt', () => {
 })
 
 describe('fmtTmt', () => {
-  it('memformat dengan dan tanpa hari', () => {
+  it('memformat tanggal lengkap', () => {
     expect(fmtTmt([1, 3, 2026])).toBe('1 Mar 26')
-    expect(fmtTmt([undefined, 2, 2026])).toBe('Feb 26')
     expect(fmtTmt([25, 4, 2026])).toBe('25 Apr 26')
+  })
+
+  it('memakai tanggal 1 bila hari tidak disebutkan', () => {
+    // Dokumen SK selalu butuh tanggal pasti, jadi "Feb 2026" -> "1 Feb 26".
+    // Ini bukan kasus pinggiran: 36 dari 81 baris data asli berbentuk seperti ini.
+    expect(fmtTmt([undefined, 2, 2026])).toBe('1 Feb 26')
+    expect(fmtTmt([undefined, 11, 2024])).toBe('1 Nov 24')
+    expect(fmtTmt([undefined, 1, 2025])).toBe('1 Jan 25')
+    expect(fmtTmt([undefined, 12, 2024])).toBe('1 Des 24')
   })
 })
 

@@ -1,5 +1,6 @@
 import { LAST_COL, BASE_SHEET, OUT_HEADERS, HDR_ROW, ROW0 } from './constants'
 import { cloneSheet, tulisSheet } from './cloneSheet'
+import { terapkanKertasF4 } from './kertasF4'
 import { lampiranFileName, sanitizeFileName, type OutputMode } from './naming'
 import type { OutputGroup } from './buildModel'
 import type { SheetModel } from './types'
@@ -45,8 +46,11 @@ export async function buildWorkbook(input: ExportInput): Promise<ArrayBuffer> {
     })
   }
 
-  const buf = await out.xlsx.writeBuffer()
-  return buf as ArrayBuffer
+  const buf = (await out.xlsx.writeBuffer()) as ArrayBuffer
+
+  // Ukuran kertas F4 (215 x 330 mm) tidak tersedia sebagai ukuran bernama di
+  // ExcelJS, jadi disuntikkan langsung ke XML berkas.
+  return terapkanKertasF4(buf, { orientation: 'landscape', scale: 85 })
 }
 
 /** ExcelJS menolak nama sheet duplikat / terlalu panjang / berkarakter terlarang. */

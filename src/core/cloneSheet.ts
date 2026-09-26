@@ -139,6 +139,21 @@ export function tulisSheet(input: TulisSheetInput): void {
   ws.getCell('E8').alignment = ALIGN_HDR
   ws.getCell('A11').value = `PROVINSI ${sheet.key.prov}`
 
+  // --- gaya baris data: SIMPAN dulu dari baris contoh template SEBELUM dibersihkan.
+  // Baris 14 template adalah baris data contoh: punya border, alignment, dan latar
+  // yang jadi acuan semua baris data. Kalau gaya diambil setelah pembersihan,
+  // bordernya sudah terhapus dan hasilnya tabel tanpa garis.
+  const gayaAcuan = Array.from({ length: LAST_COL }, (_, i) => {
+    const s = ws.getRow(ROW0).getCell(i + 1)
+    return {
+      font: s.font ? structuredClone(s.font) : undefined,
+      border: s.border ? structuredClone(s.border) : undefined,
+      fill: s.fill ? structuredClone(s.fill) : undefined,
+      alignment: s.alignment ? structuredClone(s.alignment) : undefined,
+      numFmt: s.numFmt,
+    }
+  })
+
   // --- bersihkan sisa baris contoh template + reset tinggi warisan
   for (let r = ROW0; r <= ws.rowCount; r++) {
     for (let c = 1; c <= LAST_COL; c++) {
@@ -161,17 +176,15 @@ export function tulisSheet(input: TulisSheetInput): void {
     )
   }
 
-  // --- baris data, style mengikuti baris contoh template
-  const GAYA_ACUAN = ROW0
+  // --- baris data, memakai gaya baris contoh yang sudah disimpan di atas
   for (let j = 0; j < n; j++) {
     const r = ROW0 + j
     const it = sheet.rows[j]
     const dst = ws.getRow(r)
-    const acuan = ws.getRow(GAYA_ACUAN)
 
     for (let c = 1; c <= LAST_COL; c++) {
       const d = dst.getCell(c)
-      const s = acuan.getCell(c)
+      const s = gayaAcuan[c - 1]
       if (s.font) d.font = structuredClone(s.font)
       if (s.border) d.border = structuredClone(s.border)
       if (s.fill) d.fill = structuredClone(s.fill)
