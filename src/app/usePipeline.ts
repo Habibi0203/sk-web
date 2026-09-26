@@ -95,33 +95,48 @@ export function usePipeline(): PipelineState {
     error: null,
   })
 
-  // Urutan pemuatan: aset tersimpan di browser -> aset bawaan aplikasi.
+  // Urutan pemuatan: aset BAWAAN lebih dulu (selalu tersedia, tidak bergantung apa pun),
+  // baru ditimpa aset tersimpan bila penyimpanan browser bisa dipakai.
+  //
+  // Penting: aset tersimpan hanya BONUS. Kalau IndexedDB bermasalah (mode penyamaran,
+  // kebijakan privasi, kuota penuh), aplikasi harus tetap jalan dengan aset bawaan —
+  // jangan sampai macet di status memuat.
   useEffect(() => {
     let batal = false
     ;(async () => {
+      let tpl: TemplateInfo | null = null
+      let ed: Map<EndDateKey, Tmt> | null = null
+      let meta: EndDatesMeta | null = null
+      let pesanGagal: string | null = null
+
+      // --- Lapis 1: aset bawaan
+      try {
+        const [t, e] = await Promise.all([muatTemplateBawaan(), muatEndDatesBawaan()])
+        tpl = t
+        ed = e.map
+        meta = e.meta
+      } catch (e) {
+        pesanGagal = e instanceof Error ? e.message : String(e)
+      }
+
+      // --- Lapis 2: aset tersimpan (opsional, ikut gagal pun tidak masalah)
+      let asalTpl: AsalAset = 'bawaan'
+      let asalEd: AsalAset = 'bawaan'
+      let tglTpl: string | null = null
+      let tglEd: string | null = null
+      let sig: string[] | null = null
+
       try {
         const [tplTersimpan, edTersimpan, sigTersimpan] = await Promise.all([
           muatAset('template'),
           muatAset('enddates'),
           muatAset('sig'),
         ])
-
-        let tpl: TemplateInfo | null = null
-        let asalTpl: AsalAset = 'bawaan'
-        let tglTpl: string | null = null
         if (tplTersimpan) {
           tpl = await readTemplate(tplTersimpan.nilai.nama, tplTersimpan.nilai.data)
           asalTpl = 'tersimpan'
           tglTpl = tplTersimpan.diperbarui
-        } else {
-          tpl = await muatTemplateBawaan()
-          asalTpl = 'bawaan'
         }
-
-        let ed: Map<EndDateKey, Tmt> | null = null
-        let meta: EndDatesMeta | null = null
-        let asalEd: AsalAset = 'bawaan'
-        let tglEd: string | null = null
         if (edTersimpan) {
           ed = endDatesDariEntri(edTersimpan.nilai.entri as EntriEndDate[])
           meta = {
@@ -131,30 +146,26 @@ export function usePipeline(): PipelineState {
           }
           asalEd = 'tersimpan'
           tglEd = edTersimpan.diperbarui
-        } else {
-          const b = await muatEndDatesBawaan()
-          ed = b.map
-          meta = b.meta
-          asalEd = 'bawaan'
         }
-
-        if (batal) return
-        setAset({
-          template: tpl,
-          endDates: ed,
-          endDatesMeta: meta,
-          sig: sigTersimpan?.nilai ?? null,
-          asalTemplate: asalTpl,
-          asalEndDates: asalEd,
-          diperbaruiTemplate: tglTpl,
-          diperbaruiEndDates: tglEd,
-          memuat: false,
-          error: null,
-        })
-      } catch (e) {
-        if (batal) return
-        setAset((s) => ({ ...s, memuat: false, error: e instanceof Error ? e.message : String(e) }))
+        sig = sigTersimpan?.nilai ?? null
+      } catch {
+        // Penyimpanan tidak bisa dipakai — lanjut dengan aset bawaan saja.
+        // Ini normal pada mode penyamaran; tidak perlu mengganggu user.
       }
+
+      if (batal) return
+      setAset({
+        template: tpl,
+        endDates: ed,
+        endDatesMeta: meta,
+        sig,
+        asalTemplate: asalTpl,
+        asalEndDates: asalEd,
+        diperbaruiTemplate: tglTpl,
+        diperbaruiEndDates: tglEd,
+        memuat: false,
+        error: pesanGagal,
+      })
     })()
     return () => {
       batal = true
@@ -237,7 +248,13 @@ export function usePipeline(): PipelineState {
   }, [])
 
   const pulihkan = useCallback(async (kunci: 'template' | 'enddates' | 'sig') => {
-    await hapusAset(kunci)
+    // Hapus aset tersimpan. Bila penyimpanan tidak bisa dipakai, tetap lanjut
+    // memulihkan tampilan ke bawaan.
+    try {
+      await hapusAset(kunci)
+    } catch {
+      /* abaikan — yang penting tampilan kembali ke bawaan */
+    }
     if (kunci === 'template') {
       const tpl = await muatTemplateBawaan()
       setAset((s) => ({

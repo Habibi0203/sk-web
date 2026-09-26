@@ -9,6 +9,10 @@ coverage/
 vite.config.ts.timestamp-*.mjs
 *.timestamp-*.mjs
 
+# Folder kerja sementara (hasil uji browser, keluaran pemeriksaan, dll)
+.tmp/
+.tmp-*/
+
 # Log & berkas lokal
 *.log
 npm-debug.log*
