@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react'
-import { STEPS, type StepId } from './steps'
+import { stepDef, Navigasi, TopBar } from './Navigasi'
+import { Ringkasan } from './Ringkasan'
 import { usePipeline } from './usePipeline'
+import { useTema } from './useTema'
+import type { StepId } from './steps'
 import { UploadPanel } from '../ui/UploadPanel'
 import { SheetTabs } from '../ui/SheetTabs'
 import { PreviewTable } from '../ui/PreviewTable'
@@ -9,9 +12,11 @@ import { PengaturanPanel } from '../ui/PengaturanPanel'
 import { ExportPanel } from '../ui/ExportPanel'
 import { EditGrid } from '../ui/EditGrid'
 import { HistoryPanel } from '../ui/HistoryPanel'
+import { hitungEditPerSheet } from '../storage/edits'
 
 export function App() {
   const p = usePipeline()
+  const tema = useTema()
   const [step, setStep] = useState<StepId>('unggah')
   const [sheetIdx, setSheetIdx] = useState(0)
 
@@ -23,79 +28,53 @@ export function App() {
     }
   }, [p.model])
 
-  const active = STEPS.find((s) => s.id === step)!
-  const adaModel = p.modelEfektif !== null
+  const aktif = stepDef(step)
+  const adaData = p.modelEfektif !== null
+  const editPerSheet = hitungEditPerSheet(p.edit)
+
+  // Jaga indeks sheet tetap masuk akal bila daftar berubah.
+  useEffect(() => {
+    const n = p.modelEfektif?.sheets.length ?? 0
+    if (sheetIdx >= n && n > 0) setSheetIdx(0)
+  }, [p.modelEfektif, sheetIdx])
 
   return (
     <div className="app">
-      <header className="topbar">
-        <div className="brand">
-          <span className="brand-mark" aria-hidden="true" />
-          <div>
-            <h1>Generator Lampiran SK</h1>
-            <p>Penggantian Pendamping PIDI &amp; PIDGI</p>
-          </div>
-        </div>
-        <span className="badge-offline" title="Tidak ada berkas yang dikirim ke server">
-          Diproses di perangkat ini
-        </span>
-      </header>
+      <TopBar tema={tema.tema} onPutarTema={tema.putar} efektif={tema.efektif} />
 
-      <nav className="stepper" aria-label="Langkah pengerjaan">
-        {STEPS.map((s, i) => {
-          const terkunci = (s.id === 'pratinjau' || s.id === 'validasi') && !adaModel
-          return (
-            <button
-              key={s.id}
-              type="button"
-              className={`step ${s.id === step ? 'is-active' : ''}`}
-              aria-current={s.id === step ? 'step' : undefined}
-              disabled={terkunci}
-              title={terkunci ? 'Proses data terlebih dahulu' : s.hint}
-              onClick={() => setStep(s.id)}
-            >
-              <span className="step-no">{i + 1}</span>
-              <span className="step-label">{s.label}</span>
-            </button>
-          )
-        })}
-      </nav>
+      <Navigasi step={step} onPilih={setStep} adaData={adaData} />
 
-      {p.model && (
-        <div className="summary">
-          <span>
-            <b>{p.model.sheets.length}</b> sheet
-          </span>
-          <span>
-            <b>{p.model.rawCount}</b> baris data
-          </span>
-          <span>
-            <b>{p.model.anomalies.length}</b> perlu dicek
-          </span>
-          {p.edit.size > 0 && (
-            <span className="summary-edit">
-              <b>{p.edit.size}</b> sel disunting
-            </span>
-          )}
-          <span className="summary-src">Template: {p.model.templateName}</span>
-          <span className="summary-src">Periode: {p.model.sumberPeriode}</span>
-        </div>
+      {p.model && adaData && (
+        <Ringkasan
+          model={{ ...p.modelEfektif! }}
+          jumlahSheet={p.modelEfektif!.sheets.length}
+          jumlahEdit={p.edit.size}
+        />
       )}
 
       <main className="panel">
         <div className="panel-head">
-          <h2>{active.label}</h2>
-          <p>{active.hint}</p>
-        </div>
-        <div className="panel-body">
-          {step === 'unggah' && (
-            <UploadPanel p={p} kePengaturan={() => setStep('pengaturan')} />
+          <div>
+            <h2>{aktif.label}</h2>
+            <p>{aktif.hint}</p>
+          </div>
+          {!adaData && step !== 'unggah' && step !== 'pengaturan' && step !== 'riwayat' && (
+            <span className="panel-kunci">Perlu proses data dulu</span>
           )}
+        </div>
+
+        <div className="panel-body">
+          {step === 'unggah' && <UploadPanel p={p} kePengaturan={() => setStep('pengaturan')} />}
 
           {step === 'pratinjau' &&
             (p.modelEfektif ? (
-              <div className="preview-layout">
-                <SheetTabs sheets={p.modelEfektif.sheets} active={sheetIdx} onSelect={setSheetIdx} />
+              <div className="layout-sheet">
+                <SheetTabs
+                  sheets={p.modelEfektif.sheets}
+                  active={sheetIdx}
+                  onSelect={setSheetIdx}
+                  editPerSheet={editPerSheet}
+                />
                 {p.modelEfektif.sheets[sheetIdx] && (
                   <PreviewTable sheet={p.modelEfektif.sheets[sheetIdx]} />
                 )}
@@ -122,8 +101,13 @@ export function App() {
 
           {step === 'edit' &&
             (p.modelEfektif ? (
-              <div className="preview-layout">
-                <SheetTabs sheets={p.modelEfektif.sheets} active={sheetIdx} onSelect={setSheetIdx} />
+              <div className="layout-sheet">
+                <SheetTabs
+                  sheets={p.modelEfektif.sheets}
+                  active={sheetIdx}
+                  onSelect={setSheetIdx}
+                  editPerSheet={editPerSheet}
+                />
                 {p.modelEfektif.sheets[sheetIdx] && (
                   <EditGrid
                     sheet={p.modelEfektif.sheets[sheetIdx]}
@@ -136,6 +120,7 @@ export function App() {
             ) : (
               <Kosong pesan="Edit sel tersedia setelah data diproses." />
             ))}
+
           {step === 'unduh' &&
             (p.modelEfektif ? (
               <ExportPanel
@@ -147,6 +132,7 @@ export function App() {
             ) : (
               <Kosong pesan="Berkas bisa disusun setelah data diproses." />
             ))}
+
           {step === 'riwayat' && <HistoryPanel />}
           {step === 'pengaturan' && <PengaturanPanel p={p} />}
         </div>

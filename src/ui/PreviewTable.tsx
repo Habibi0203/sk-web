@@ -16,7 +16,7 @@ export function PreviewTable({ sheet }: Props) {
         <div className="pv-row">
           <span className="pv-k">Nama sheet</span>
           <span className="pv-v">
-            <span className="tab-dot" style={{ background: `#${sheet.tabColor}` }} />
+            <span className="sheet-warna" style={{ background: `#${sheet.tabColor}` }} />
             {sheet.name}
           </span>
         </div>
