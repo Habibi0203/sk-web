@@ -9,16 +9,20 @@ import { SheetTabs } from '../ui/SheetTabs'
 import { PreviewTable } from '../ui/PreviewTable'
 import { AnomalyList } from '../ui/AnomalyList'
 import { PengaturanPanel } from '../ui/PengaturanPanel'
+import { GerbangPengaturan } from '../ui/GerbangPengaturan'
 import { ExportPanel } from '../ui/ExportPanel'
 import { EditGrid } from '../ui/EditGrid'
 import { HistoryPanel } from '../ui/HistoryPanel'
 import { hitungEditPerSheet } from '../storage/edits'
+import { gerbangTerbuka, bukaGerbang, kunciGerbang } from './gerbang'
 
 export function App() {
   const p = usePipeline()
   const tema = useTema()
   const [step, setStep] = useState<StepId>('unggah')
   const [sheetIdx, setSheetIdx] = useState(0)
+  // Gerbang Pengaturan: berlaku selama tab terbuka, bukan tiap navigasi.
+  const [pengaturanTerbuka, setPengaturanTerbuka] = useState<boolean>(() => gerbangTerbuka())
 
   // Setelah data diproses, langsung antar ke pratinjau.
   useEffect(() => {
@@ -60,6 +64,19 @@ export function App() {
           </div>
           {!adaData && step !== 'unggah' && step !== 'pengaturan' && step !== 'riwayat' && (
             <span className="panel-kunci">Perlu proses data dulu</span>
+          )}
+          {step === 'pengaturan' && pengaturanTerbuka && (
+            <button
+              type="button"
+              className="btn-ghost btn-kecil"
+              onClick={() => {
+                kunciGerbang()
+                setPengaturanTerbuka(false)
+                setStep('unggah')
+              }}
+            >
+              Kunci lagi
+            </button>
           )}
         </div>
 
@@ -134,7 +151,17 @@ export function App() {
             ))}
 
           {step === 'riwayat' && <HistoryPanel />}
-          {step === 'pengaturan' && <PengaturanPanel p={p} />}
+          {step === 'pengaturan' &&
+            (pengaturanTerbuka ? (
+              <PengaturanPanel p={p} />
+            ) : (
+              <GerbangPengaturan
+                onBuka={() => {
+                  bukaGerbang()
+                  setPengaturanTerbuka(true)
+                }}
+              />
+            ))}
         </div>
       </main>
 
