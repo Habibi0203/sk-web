@@ -14,8 +14,8 @@
 /** Penanda sesi: berlaku selama tab ini terbuka, hilang saat tab ditutup. */
 export const KUNCI_SESI = 'sk-pengaturan-terbuka'
 
-const GARAM_B64 = 't8xFZfYqlj0uoo0WNTBRlg=='
-const SIDIK_B64 = 'xLnbdHp3cyi2bs1HG1e/Y0iUCxddjImGy6eI5wm2stg='
+const GARAM_B64 = 'AWdGqC660dkDONw7+2CMjg=='
+const SIDIK_B64 = '9LDv3mxq3pMWLLff1d5gWfpUKpdWjXpkuR4jOCIlT4I='
 const PUTARAN = 310000
 
 function dariBase64(teks: string): Uint8Array {
