@@ -13,6 +13,9 @@ import { parseDocxParagraphs } from '../core/readDocx'
 import { readRawFiles, type RawFileInput } from '../core/readRaw'
 import { readTemplate, type TemplateInfo } from '../core/readTemplate'
 import { hapusAset, muatAset, simpanAset } from '../storage/assets'
+import { bersihkanEdit, terapkanEdit, type EditMap } from '../storage/edits'
+import { simpanRiwayat } from '../storage/history'
+import { ringkasModel } from '../core/buildModel'
 import type { BuildModel } from '../core/types'
 
 export interface RawInput {
@@ -42,7 +45,15 @@ export interface PipelineState {
   raw: RawInput[]
   template: File | null
   docx: File | null
+  /** Model apa adanya dari hasil pemrosesan. */
   model: BuildModel | null
+  /** Model setelah editan manual diterapkan — dipakai untuk pratinjau & ekspor. */
+  modelEfektif: BuildModel | null
+  /** Peta editan manual. */
+  edit: EditMap
+  setEditSel: (kunci: string, nilai: string | null) => void
+  resetEditSheet: (namaSheet: string) => void
+  resetEdit: () => void
   aset: AsetState
   busy: boolean
   error: string | null
@@ -69,6 +80,7 @@ export function usePipeline(): PipelineState {
   const [model, setModel] = useState<BuildModel | null>(null)
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [edit, setEdit] = useState<EditMap>(new Map())
 
   const [aset, setAset] = useState<AsetState>({
     template: null,
@@ -299,6 +311,21 @@ export function usePipeline(): PipelineState {
         setError(`Bulan tidak dikenali untuk: ${bulanTidakDiketahui.join(', ')}`)
       }
       setModel(m)
+      setEdit(new Map())
+
+      // Catat riwayat (ringkasan saja — tanpa isi tabel).
+      try {
+        const r = ringkasModel(m)
+        await simpanRiwayat({
+          waktu: new Date().toISOString(),
+          berkasMentah: raw.map((x) => x.file.name),
+          templateNama: tpl.fileName,
+          sumberPeriode,
+          ...r,
+        })
+      } catch {
+        /* riwayat bersifat tambahan — kegagalan menyimpan tidak boleh menggagalkan proses */
+      }
     } catch (e) {
       setModel(null)
       setError(e instanceof Error ? e.message : String(e))
@@ -307,7 +334,28 @@ export function usePipeline(): PipelineState {
     }
   }, [template, docx, raw, aset])
 
+  const setEditSel = useCallback((kunci: string, nilai: string | null) => {
+    setEdit((prev) => {
+      // Nilai kosong berarti kembali ke nilai asli -> hapus dari peta.
+      if (nilai === null || nilai === '') {
+        const next = new Map(prev)
+        next.delete(kunci)
+        return next
+      }
+      const next = new Map(prev)
+      next.set(kunci, nilai)
+      return next
+    })
+  }, [])
+
+  const resetEditSheet = useCallback((namaSheet: string) => {
+    setEdit((prev) => bersihkanEdit(prev, namaSheet))
+  }, [])
+
+  const resetEdit = useCallback(() => setEdit(new Map()), [])
+
   const reset = useCallback(() => {
+    setEdit(new Map())
     setRaw([])
     setTemplateSementara(null)
     setDocxSementara(null)
@@ -315,11 +363,22 @@ export function usePipeline(): PipelineState {
     setError(null)
   }, [])
 
+  const modelEfektif = useMemo(() => {
+    if (!model) return null
+    if (edit.size === 0) return model
+    return { ...model, sheets: terapkanEdit(model.sheets, edit) }
+  }, [model, edit])
+
   return {
     raw,
     template,
     docx,
     model,
+    modelEfektif,
+    edit,
+    setEditSel,
+    resetEditSheet,
+    resetEdit,
     aset,
     busy,
     error,

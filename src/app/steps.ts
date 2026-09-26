@@ -1,4 +1,11 @@
-export type StepId = 'unggah' | 'pratinjau' | 'validasi' | 'edit' | 'unduh' | 'pengaturan'
+export type StepId =
+  | 'unggah'
+  | 'pratinjau'
+  | 'validasi'
+  | 'edit'
+  | 'unduh'
+  | 'pengaturan'
+  | 'riwayat'
 
 export interface StepDef {
   id: StepId
@@ -12,6 +19,11 @@ export const STEPS: StepDef[] = [
   { id: 'validasi', label: 'Validasi', hint: 'Daftar hal yang perlu dicek' },
   { id: 'edit', label: 'Edit', hint: 'Perbaiki nilai langsung sebelum diunduh' },
   { id: 'unduh', label: 'Unduh', hint: 'Simpan berkas Excel hasil generate' },
+  {
+    id: 'riwayat',
+    label: 'Riwayat',
+    hint: 'Catatan pemrosesan sebelumnya dan perbandingannya',
+  },
   {
     id: 'pengaturan',
     label: 'Pengaturan',

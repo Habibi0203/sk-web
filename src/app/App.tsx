@@ -7,6 +7,8 @@ import { PreviewTable } from '../ui/PreviewTable'
 import { AnomalyList } from '../ui/AnomalyList'
 import { PengaturanPanel } from '../ui/PengaturanPanel'
 import { ExportPanel } from '../ui/ExportPanel'
+import { EditGrid } from '../ui/EditGrid'
+import { HistoryPanel } from '../ui/HistoryPanel'
 
 export function App() {
   const p = usePipeline()
@@ -22,7 +24,7 @@ export function App() {
   }, [p.model])
 
   const active = STEPS.find((s) => s.id === step)!
-  const adaModel = p.model !== null
+  const adaModel = p.modelEfektif !== null
 
   return (
     <div className="app">
@@ -70,6 +72,11 @@ export function App() {
           <span>
             <b>{p.model.anomalies.length}</b> perlu dicek
           </span>
+          {p.edit.size > 0 && (
+            <span className="summary-edit">
+              <b>{p.edit.size}</b> sel disunting
+            </span>
+          )}
           <span className="summary-src">Template: {p.model.templateName}</span>
           <span className="summary-src">Periode: {p.model.sumberPeriode}</span>
         </div>
@@ -86,21 +93,23 @@ export function App() {
           )}
 
           {step === 'pratinjau' &&
-            (p.model ? (
+            (p.modelEfektif ? (
               <div className="preview-layout">
-                <SheetTabs sheets={p.model.sheets} active={sheetIdx} onSelect={setSheetIdx} />
-                {p.model.sheets[sheetIdx] && <PreviewTable sheet={p.model.sheets[sheetIdx]} />}
+                <SheetTabs sheets={p.modelEfektif.sheets} active={sheetIdx} onSelect={setSheetIdx} />
+                {p.modelEfektif.sheets[sheetIdx] && (
+                  <PreviewTable sheet={p.modelEfektif.sheets[sheetIdx]} />
+                )}
               </div>
             ) : (
               <Kosong pesan="Belum ada data. Unggah berkas lalu klik Proses data." />
             ))}
 
           {step === 'validasi' &&
-            (p.model ? (
+            (p.modelEfektif ? (
               <AnomalyList
-                anomalies={p.model.anomalies}
+                anomalies={p.modelEfektif.anomalies}
                 onJump={(name) => {
-                  const i = p.model!.sheets.findIndex((s) => s.name === name)
+                  const i = p.modelEfektif!.sheets.findIndex((s) => s.name === name)
                   if (i >= 0) {
                     setSheetIdx(i)
                     setStep('pratinjau')
@@ -111,18 +120,34 @@ export function App() {
               <Kosong pesan="Daftar ini dihitung setelah data diproses." />
             ))}
 
-          {step === 'edit' && <Kosong pesan="Edit sel akan tersedia pada tahap berikutnya." />}
+          {step === 'edit' &&
+            (p.modelEfektif ? (
+              <div className="preview-layout">
+                <SheetTabs sheets={p.modelEfektif.sheets} active={sheetIdx} onSelect={setSheetIdx} />
+                {p.modelEfektif.sheets[sheetIdx] && (
+                  <EditGrid
+                    sheet={p.modelEfektif.sheets[sheetIdx]}
+                    edit={p.edit}
+                    onEdit={p.setEditSel}
+                    onResetSheet={() => p.resetEditSheet(p.modelEfektif!.sheets[sheetIdx].name)}
+                  />
+                )}
+              </div>
+            ) : (
+              <Kosong pesan="Edit sel tersedia setelah data diproses." />
+            ))}
           {step === 'unduh' &&
-            (p.model ? (
+            (p.modelEfektif ? (
               <ExportPanel
-                model={p.model}
+                model={p.modelEfektif}
                 info={p.aset.template!}
-                templateData={p.model.templateData}
+                templateData={p.modelEfektif.templateData}
                 templateSheet={p.aset.template?.sheetName ?? ''}
               />
             ) : (
               <Kosong pesan="Berkas bisa disusun setelah data diproses." />
             ))}
+          {step === 'riwayat' && <HistoryPanel />}
           {step === 'pengaturan' && <PengaturanPanel p={p} />}
         </div>
       </main>

@@ -614,6 +614,118 @@ body {
   cursor: not-allowed;
 }
 
+/* --------------------------------------------------------------- edit sel */
+.edit {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+.edit-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.edit-head h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.edit-actions {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-wrap: wrap;
+}
+
+td.c-edit {
+  padding: 0;
+  min-width: 130px;
+}
+
+td.c-edit input {
+  font: inherit;
+  font-size: 12px;
+  width: 100%;
+  min-width: 130px;
+  padding: 6px 8px;
+  border: none;
+  background: transparent;
+  color: var(--text);
+  border-radius: 0;
+}
+
+td.c-edit input:focus {
+  outline: 2px solid var(--accent-line);
+  outline-offset: -2px;
+  background: var(--surface);
+}
+
+td.c-edit.is-edited {
+  background: var(--warn-soft);
+}
+
+td.c-edit.is-edited input {
+  font-weight: 500;
+}
+
+.c-wahana {
+  color: var(--text-muted);
+}
+
+.summary-edit {
+  color: var(--warn);
+  font-weight: 500;
+}
+
+/* -------------------------------------------------------------- riwayat */
+.banding {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.banding-sub {
+  margin: 8px 0 0;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.naik {
+  color: var(--ok);
+}
+
+.turun {
+  color: var(--danger);
+}
+
+.diff-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 12.5px;
+}
+
+.diff-list li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tag-danger {
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+
 /* -------------------------------------------------------------- ringkasan */
 .summary {
   display: flex;

@@ -222,3 +222,41 @@ export function splitSheets(sheets: readonly SheetModel[], mode: OutputMode): Ou
 function emptyKey(): SheetKey {
   return { angkatan: 1, tahun: 0, program: 'PIDI', prov: '', bulan: 1 }
 }
+
+/** Ringkasan satu kali pemrosesan — dipakai untuk riwayat. Tidak memuat data pribadi. */
+export interface RingkasanPemrosesan {
+  sheets: Array<{
+    nama: string
+    baris: number
+    program: string
+    provinsi: string
+    angkatan: number
+    tahun: number
+    bulan: number
+  }>
+  jumlahSheet: number
+  jumlahBaris: number
+  jumlahAnomali: number
+  anomaliPerJenis: Record<string, number>
+}
+
+export function ringkasModel(m: BuildModel): RingkasanPemrosesan {
+  const perJenis: Record<string, number> = {}
+  for (const a of m.anomalies) perJenis[a.kind] = (perJenis[a.kind] ?? 0) + 1
+
+  return {
+    sheets: m.sheets.map((s) => ({
+      nama: s.name,
+      baris: s.rows.length,
+      program: s.key.program,
+      provinsi: s.key.prov,
+      angkatan: s.key.angkatan,
+      tahun: s.key.tahun,
+      bulan: s.key.bulan,
+    })),
+    jumlahSheet: m.sheets.length,
+    jumlahBaris: m.sheets.reduce((a, s) => a + s.rows.length, 0),
+    jumlahAnomali: m.anomalies.length,
+    anomaliPerJenis: perJenis,
+  }
+}
