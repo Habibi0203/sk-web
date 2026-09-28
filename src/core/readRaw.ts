@@ -1,5 +1,5 @@
 import type ExcelJS from 'exceljs'
-import { COLS } from './constants'
+import { COLS, ROMAN_TO_NUM } from './constants'
 import { parseTmt } from './dates'
 import { bulanDariNamaFile } from './naming'
 import { clean, normProv } from './text'
@@ -20,8 +20,19 @@ export interface ReadRawResult {
   bulanTidakDiketahui: string[]
 }
 
-const PERIODE_RE = /ANGKATAN\s+(\d+)\s+TAHUN\s+(\d{4})/i
+/**
+ * Periode di data mentah ditulis dengan dua gaya: angka ("ANGKATAN 4 TAHUN 2025")
+ * maupun angka Romawi ("ANGKATAN IV TAHUN 2025"). Keduanya muncul di berkas asli,
+ * dan versi Romawi ini pernah membuat seluruh baris terbuang tanpa jejak yang jelas.
+ */
+const PERIODE_RE = /ANGKATAN\s+(\d+|[IVXL]+)\s+TAHUN\s+(\d{4})/i
 const HDR_SCAN_MAX = 10
+
+/** "4" -> 4, "IV" -> 4. null bila angkatan di luar daftar yang dikenal. */
+function bacaAngkatan(teks: string): number | null {
+  if (/^\d+$/.test(teks)) return Number(teks)
+  return ROMAN_TO_NUM[teks.toUpperCase()] ?? null
+}
 
 /**
  * Ambil nilai mentah sebuah sel, membuka pembungkus yang dipakai ExcelJS
@@ -113,7 +124,17 @@ export async function readRawFiles(files: readonly RawFileInput[]): Promise<Read
           skipped.push({
             src: file.name,
             sheet: ws.name,
-            reason: `baris ${r}: periode '${periode}'`,
+            reason: `baris ${r}: periode '${periode}' tidak dikenali`,
+          })
+          continue
+        }
+
+        const angkatan = bacaAngkatan(m[1])
+        if (angkatan === null) {
+          skipped.push({
+            src: file.name,
+            sheet: ws.name,
+            reason: `baris ${r}: angkatan pada periode '${periode}' tidak dikenali`,
           })
           continue
         }
@@ -127,7 +148,7 @@ export async function readRawFiles(files: readonly RawFileInput[]): Promise<Read
           sheet: ws.name,
           rowno: r,
           bulan,
-          angkatan: Number(m[1]),
+          angkatan,
           tahun: Number(m[2]),
           program,
           prov: normProv(prov),

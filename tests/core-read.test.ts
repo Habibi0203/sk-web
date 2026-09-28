@@ -318,3 +318,45 @@ describe('buildModel + splitSheets', () => {
     expect(penuh[0].sheets.map((s) => s.lampiran)).toEqual([1, 2, 3])
   })
 })
+
+describe('gaya penulisan periode', () => {
+  // Berkas Agustus 2026 memakai angka Romawi: "ANGKATAN IV TAHUN 2025".
+  // Sebelum diperbaiki, seluruh baris seperti ini terbuang sebagai "baris dilewati".
+  it('menerima angkatan angka Romawi, bukan hanya angka', async () => {
+    const data = await makeRawXlsx({
+      AGUSTUS: [{ ...ROW_A, periode: 'ANGKATAN IV TAHUN 2025' }],
+    })
+    const res = await readRawFiles([{ name: 'Pendamping Agustus 2026.xlsx', data }])
+
+    expect(res.skipped).toEqual([])
+    expect(res.rows).toHaveLength(1)
+    expect(res.rows[0].angkatan).toBe(4)
+    expect(res.rows[0].tahun).toBe(2025)
+  })
+
+  it('angkatan angka dan angka Romawi menghasilkan baris yang setara', async () => {
+    const angka = await readRawFiles([
+      {
+        name: 'AGUSTUS_DATA.xlsx',
+        data: await makeRawXlsx({ AGUSTUS: [{ ...ROW_A, periode: 'ANGKATAN 4 TAHUN 2025' }] }),
+      },
+    ])
+    const romawi = await readRawFiles([
+      {
+        name: 'AGUSTUS_DATA.xlsx',
+        data: await makeRawXlsx({ AGUSTUS: [{ ...ROW_A, periode: 'ANGKATAN IV TAHUN 2025' }] }),
+      },
+    ])
+    expect(romawi.rows[0].angkatan).toBe(angka.rows[0].angkatan)
+  })
+
+  it('melewati dengan catatan bila periodenya benar-benar tidak dikenali', async () => {
+    const data = await makeRawXlsx({ AGUSTUS: [{ ...ROW_A, periode: 'PERIODE ANEH' }] })
+    const res = await readRawFiles([{ name: 'AGUSTUS_DATA.xlsx', data }])
+
+    expect(res.rows).toHaveLength(0)
+    expect(res.skipped).toHaveLength(1)
+    expect(res.skipped[0].reason).toContain("tidak dikenali")
+    expect(res.skipped[0].reason).toContain('PERIODE ANEH')
+  })
+})
